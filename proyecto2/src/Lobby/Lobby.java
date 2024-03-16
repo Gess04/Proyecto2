@@ -8,7 +8,7 @@ package Lobby;
  *
  * @author 58414
  */
-public class Proyecto2 {
+public class Lobby {
 
     /**
      * @param args the command line arguments
