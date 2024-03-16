@@ -3,13 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Chris/Documents/GitHub/Proyecto2/proyecto2/src/Interfaces/SearchLodging.java</file>
-            <file>file:/C:/Users/Chris/Documents/GitHub/Proyecto2/proyecto2/src/Interfaces/CheckIn.java</file>
-            <file>file:/C:/Users/Chris/Documents/GitHub/Proyecto2/proyecto2/src/Interfaces/Welcome.java</file>
-            <file>file:/C:/Users/Chris/Documents/GitHub/Proyecto2/proyecto2/src/Interfaces/CheckOut.java</file>
-            <file>file:/C:/Users/Chris/Documents/GitHub/Proyecto2/proyecto2/src/Interfaces/Menu.java</file>
-            <file>file:/C:/Users/Chris/Documents/GitHub/Proyecto2/proyecto2/src/Interfaces/SearchReservation.java</file>
-            <file>file:/C:/Users/Chris/Documents/GitHub/Proyecto2/proyecto2/src/Interfaces/History.java</file>
+            <file>file:/Users/tomasaraujo/Documents/GitHub/Proyecto2/proyecto2/src/Functions/Search.java</file>
+            <file>file:/Users/tomasaraujo/Documents/GitHub/Proyecto2/proyecto2/src/Classes/Status.java</file>
+            <file>file:/Users/tomasaraujo/Documents/GitHub/Proyecto2/proyecto2/src/Functions/helpers.java</file>
         </group>
     </open-files>
 </project-private>
