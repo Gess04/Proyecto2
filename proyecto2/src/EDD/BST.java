@@ -15,6 +15,12 @@ public class BST {
     public BST() {
         this.root = null;
     }
+
+    public BST(NodeBST root) {
+        this.root = root;
+    }
+    
+    
     public NodeBST getRoot() {
         return root;
     }
