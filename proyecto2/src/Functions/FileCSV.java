@@ -18,10 +18,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FileCSV {
-    private helpers help = new helpers();
+    private Helpers help = new Helpers();
     
     //funcion para leer archivo TXT
-    public void Read_bookings(BST tree_reserv){ 
+    public void Read_bookings(List list_reservation){ 
         String line;
         String expresion_txt = "";
         String path = "test\\bookings.csv";
@@ -41,7 +41,7 @@ public class FileCSV {
                     String[] expresion_split = expresion_txt.split("\n");
                     for(int i =0;i < expresion_split.length;i++){
                         String[] info = expresion_split[i].split(",");
-                        //if(help.ValidateID(info[0]) != -1 && help.Validate_RoomType(info[5]) != null && help.ValidateEmail(info[3]) != null && help.Validatetelf(info[6]) != null){
+                        if(help.ValidateID(info[0]) != -1 && help.Validate_RoomType(info[5]) != null && help.ValidateEmail(info[3]) != null && help.Validatetelf(info[6]) != null){
                             int id = help.ValidateID(info[0]);
                             String name = info[1];
                             String last_name = info[2];
@@ -59,11 +59,11 @@ public class FileCSV {
                             Reservation booking = new Reservation(client, roomType, departure_date, arrival_date);
                             System.out.println(booking.toString());
                             
-                            tree_reserv.insertNodo(tree_reserv.getRoot(), booking);
-                        //}else{
-                            //JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
-                            //break;
-                        //}   
+                            list_reservation.addEnd(booking);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
+                            break;
+                        }   
                     }
                 }
                 br.close();
@@ -117,7 +117,7 @@ public class FileCSV {
     public void Read_state(HashTable table){
         String line;
         String expresion_txt = "";
-        String path = "test\\state2.csv";
+        String path = "test\\state.csv";
         File file = new File(path);
         try{
             if(!file.exists()){

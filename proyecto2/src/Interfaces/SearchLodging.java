@@ -4,6 +4,10 @@
  */
 package Interfaces;
 
+import Classes.Client;
+import javax.swing.JOptionPane;
+import EDD.HashTable;
+
 /**
  *
  * @author Christian
@@ -38,10 +42,13 @@ public class SearchLodging extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
-        searchText = new javax.swing.JTextField();
+        search_name = new javax.swing.JTextField();
         search = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        searchText1 = new javax.swing.JTextField();
+        searchText2 = new javax.swing.JTextField();
+        search_lastName = new javax.swing.JTextField();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,13 +66,13 @@ public class SearchLodging extends javax.swing.JFrame {
         });
         jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 40));
 
-        searchText.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        searchText.addActionListener(new java.awt.event.ActionListener() {
+        search_name.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        search_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchTextActionPerformed(evt);
+                search_nameActionPerformed(evt);
             }
         });
-        jPanel1.add(searchText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
+        jPanel1.add(search_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
 
         search.setBackground(new java.awt.Color(0, 0, 0));
         search.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,8 +94,31 @@ public class SearchLodging extends javax.swing.JFrame {
         jLabel1.setText("Indique la cédula del huésped del cual desea encontrar su reservacion: ");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 480, -1));
 
+        searchText1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        searchText1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchText1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(searchText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
+
+        searchText2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        searchText2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchText2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(searchText2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
+
+        search_lastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_lastNameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(search_lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 280, 30));
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 370));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 370));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 490, 370));
 
@@ -96,7 +126,10 @@ public class SearchLodging extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-        // Boton de buscar
+        String name = search_name.getText();
+        String lastname = search_lastName.getText();
+        Client client = new Client(name,lastname);
+//        JOptionPane.showMessageDialog(null, );
     }//GEN-LAST:event_searchActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -106,9 +139,21 @@ public class SearchLodging extends javax.swing.JFrame {
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
-    private void searchTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextActionPerformed
+    private void search_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_searchTextActionPerformed
+    }//GEN-LAST:event_search_nameActionPerformed
+
+    private void searchText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchText1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchText1ActionPerformed
+
+    private void searchText2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchText2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchText2ActionPerformed
+
+    private void search_lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_lastNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_lastNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +200,9 @@ public class SearchLodging extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton search;
-    private javax.swing.JTextField searchText;
+    private javax.swing.JTextField searchText1;
+    private javax.swing.JTextField searchText2;
+    private javax.swing.JTextField search_lastName;
+    private javax.swing.JTextField search_name;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,6 +9,7 @@ import EDD.BST;
 import EDD.HashTable;
 import EDD.List;
 import Functions.FileCSV;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Welcome extends javax.swing.JFrame {
      * Creates new form Welcome
      */
     public static HashTable state = new HashTable();
-    public static BST reservation = new BST();
+    public static List reservation = new List();
     public static List list_rooms = new List();       
     public Welcome() {
         initComponents();
@@ -85,8 +86,8 @@ public class Welcome extends javax.swing.JFrame {
         
         //Client client = new Client("Arielle", "Bragger");
         //System.out.println(state.isInHashIndexN(client));
-        
-        System.out.println(reservation.preOrder2(reservation.getRoot(), chain));
+         JOptionPane.showMessageDialog(null,"Datos Cargados.");
+//        System.out.println(reservation.preOrder2(reservation.get), chain));
         this.setVisible(false);
         Welcome b = new Welcome();
         Menu window1 = new Menu(b);

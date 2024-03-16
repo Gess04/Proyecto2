@@ -8,7 +8,7 @@ package Functions;
  *
  * @author 58414
  */
-public class helpers {
+public class Helpers {
    public boolean validateLyrics(String letter){
         return letter.matches("[a-zA-Zñ]*");
     }
