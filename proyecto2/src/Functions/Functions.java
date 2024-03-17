@@ -83,9 +83,18 @@ public class Functions {
                 if (room.getRoomType().equalsIgnoreCase(reserv.getRoomType())) {
                     Status status = new Status(room.getRoomNum(), reserv.getClient(), reserv.getCheckIn());
                     table.insertState(status);
-                    bookings.deleteByReference(reserv);
+                    bookings.deleteByReference(indexReservation(bookings, id));
+                    count++;
+                    break;
                 }
             }
+            if (count > 0) {
+                JOptionPane.showMessageDialog(null, "El cliente ha llegado");
+            }else{
+                JOptionPane.showMessageDialog(null, "No hay habitación dsiponible");
+            }
+        }else{
+        JOptionPane.showMessageDialog(null, "El cliente no tiene reserva");
         }
     }
 }
