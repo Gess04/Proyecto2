@@ -21,7 +21,7 @@ public class Welcome extends javax.swing.JFrame {
      * Creates new form Welcome
      */
     public static HashTable state = new HashTable();
-    public static List reservation = new List();
+    public static BST reservation = new BST();
     public static List list_rooms = new List();       
     public Welcome() {
         initComponents();
