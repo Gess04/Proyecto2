@@ -7,7 +7,7 @@ import Classes.*;
 
 /**
  *
- * @author 58414
+ * @author Gabriel Flores
  */
 public class NodeBST {
     private Reservation reservation;
@@ -24,6 +24,13 @@ public class NodeBST {
 
     public NodeBST() {
         this.reservation = null;
+        this.left = null;
+        this.right = null;
+        this.father = null;
+    }
+    
+    public NodeBST(Reservation reservation) {
+        this.reservation = reservation;
         this.left = null;
         this.right = null;
         this.father = null;

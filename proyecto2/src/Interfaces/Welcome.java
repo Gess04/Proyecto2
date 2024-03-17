@@ -21,8 +21,8 @@ public class Welcome extends javax.swing.JFrame {
      * Creates new form Welcome
      */
     public static HashTable state = new HashTable();
-    public static List reservation = new List();
-    public static List list_rooms = new List();       
+    public static BST reservation = new BST();
+    public static BST rooms = new BST();       
     public Welcome() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -82,6 +82,7 @@ public class Welcome extends javax.swing.JFrame {
         FileCSV file = new FileCSV();
         file.Read_state(state);
         file.Read_bookings(reservation);
+  
         String chain = "";
         
         //Client client = new Client("Arielle", "Bragger");
