@@ -3,16 +3,91 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Functions;
-import EDD.*;
 import Classes.*;
-import java.util.Hashtable;
+import EDD.*;
 import javax.swing.JOptionPane;
 /**
  *
  * @author 58414
  */
 public class Functions {
+    public void loadHashTable(List list, Reservation reservation, HashTable table) {
+        NodeList aux = list.getPfirst();
+        boolean found = false;
+        while (aux != null && found != true) {
+            if (aux.gettInfo().equals(reservation)) {
+                found = true;
+                break;
+            }else{
+                aux = aux.getpNext();
+            }
+        }
+        
+        if (found == false) {
+            JOptionPane.showMessageDialog(null, "No hay reservacion");
+        }else{
+            
+        }
+    }
     
+
+    public String searchById(List list, int id) {
+        NodeList aux = list.getPfirst();
+        for (int i = 0; i < list.getSize(); i++) {
+            Reservation reserv = (Reservation) list.getValor(i);
+            Client client = reserv.getClient();
+            if (client.getId() == id) {
+                return reserv.toString();
+            }
+            aux.getpNext();
+        }
+        return null;
+    }
+    
+    public Reservation reserv(List list, int id) {
+        NodeList aux = list.getPfirst();
+        for (int i = 0; i < list.getSize(); i++) {
+            Reservation reserv = (Reservation) list.getValor(i);
+            Client client = reserv.getClient();
+            if (client.getId() == id) {
+                return reserv;
+            }
+            aux.getpNext();
+        }
+        return null;
+    }
+    
+    public int indexReservation(List list, int id) {
+        NodeList aux = list.getPfirst();
+        for (int i = 0; i < list.getSize(); i++) {
+            Reservation reserv = (Reservation) list.getValor(i);
+            Client client = reserv.getClient();
+            if (client.getId() == id) {
+                return i;
+            }
+            aux.getpNext();
+        }
+        return -1;
+    }
+    
+    public void checkIn(List bookings, int id, List rooms, HashTable table) {
+        if (searchById(bookings, id) != null) {
+            int count = 0;
+            Reservation reserv = reserv(bookings, id);
+            List availableRooms = new List();
+            table.Availables(availableRooms);
+            for (int i = 0; i < rooms.getSize(); i++) {
+                int roomNumber = (int) availableRooms.getValor(i);
+                Room room = (Room) rooms.getValor(roomNumber-1);
+                
+                if (room.getRoomType().equalsIgnoreCase(reserv.getRoomType())) {
+                    Status status = new Status(room.getRoomNum(), reserv.getClient(), reserv.getCheckIn());
+                    table.insertState(status);
+                    bookings.deleteByReference(reserv);
+                }
+            }
+        }
+
     public void load_hashtable(List list1, Reservation reserv, Hashtable table){
         NodeList aux = list1.getPfirst();
         boolean find = false;
@@ -41,5 +116,6 @@ public class Functions {
             aux.getpNext();
         }
         return null;
+
     }
 }
