@@ -7,7 +7,7 @@ import Classes.*;
 
 /**
  *
- * @author 58414
+ * @author Gabriel Flores
  */
 public class BST {
     private NodeBST root;
