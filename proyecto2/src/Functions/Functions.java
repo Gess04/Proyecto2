@@ -83,12 +83,22 @@ public class Functions {
                 if (room.getRoomType().equalsIgnoreCase(reserv.getRoomType())) {
                     Status status = new Status(room.getRoomNum(), reserv.getClient(), reserv.getCheckIn());
                     table.insertState(status);
-                    bookings.deleteByReference(reserv);
+                    bookings.deleteByReference(indexReservation(bookings, id));
+                    count++;
+                    break;
                 }
             }
+            if (count > 0) {
+                JOptionPane.showMessageDialog(null, "El cliente ha llegado");
+            }else{
+                JOptionPane.showMessageDialog(null, "No hay habitación dsiponible");
+            }
+        }else{
+        JOptionPane.showMessageDialog(null, "El cliente no tiene reserva");
         }
+    }
 
-    public void load_hashtable(List list1, Reservation reserv, Hashtable table){
+    public void load_hashtable(List list1, Reservation reserv, HashTable table){
         NodeList aux = list1.getPfirst();
         boolean find = false;
         while(aux != null && find != true){
@@ -105,6 +115,7 @@ public class Functions {
             JOptionPane.showMessageDialog(null, "Cargado");
         }
     }
+    
     public String SearchByID(List list, int id2){
         NodeList aux = list.getPfirst();
         for (int i = 0; i < list.getSize(); i++) {
