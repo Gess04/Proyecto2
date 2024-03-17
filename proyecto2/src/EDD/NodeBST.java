@@ -28,6 +28,13 @@ public class NodeBST {
         this.right = null;
         this.father = null;
     }
+    
+    public NodeBST(Reservation reservation) {
+        this.reservation = reservation;
+        this.left = null;
+        this.right = null;
+        this.father = null;
+    }
 
     public Reservation getReservation() {
         return reservation;

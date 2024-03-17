@@ -45,9 +45,9 @@ public class BST {
             setRoot(node);
         } else {
             if (reservation.getClient().getId() <=  root.getReservation().getClient().getId()) {
-                if(root.getRight() == null) {
-                    root.setRight(node);
-                    node.setFather(node);
+                if(root.getLeft() == null) {
+                    root.setLeft(node);
+                    node.setFather(root);
                 } else {
                     insertNodo(root.getLeft(),reservation);
                 }

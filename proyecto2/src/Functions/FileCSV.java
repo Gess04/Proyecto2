@@ -21,7 +21,7 @@ public class FileCSV {
     private Helpers help = new Helpers();
     
     //funcion para leer archivo TXT
-    public void Read_bookings(List list_reservation){ 
+    public void Read_bookings(BST tree_reservation){ 
         String line;
         String expresion_txt = "";
         String path = "test\\bookings.csv";
@@ -59,7 +59,7 @@ public class FileCSV {
                             Reservation booking = new Reservation(client, roomType, departure_date, arrival_date);
                             System.out.println(booking.toString());
                             
-                            list_reservation.addEnd(booking);
+                            tree_reservation.insertNodo(tree_reservation.getRoot(), booking);
                         }else{
                             JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
                             break;
