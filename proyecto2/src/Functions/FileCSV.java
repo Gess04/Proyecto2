@@ -6,7 +6,7 @@ package Functions;
 
 /**
  *
- * @author 58414
+ * @author Gabriel Flores
  */
 import EDD.*;
 import Classes.*;
@@ -57,7 +57,7 @@ public class FileCSV {
                             
                             
                             Reservation booking = new Reservation(client, roomType, departure_date, arrival_date);
-                            System.out.println(booking.toString());
+                            
                             
                             tree_reservation.insertNodo(tree_reservation.getRoot(), booking);
                         }else{
@@ -73,7 +73,7 @@ public class FileCSV {
         }
 
     }
-    public void Read_rooms(List list_rooms){
+    public void Read_rooms(List list){
         String line;
         String expresion_txt = "";
         String path = "test\\rooms.csv";
@@ -98,9 +98,9 @@ public class FileCSV {
                             String roomType = help.Validate_RoomType(info[1]);
                             int floor_number = help.ValidateNumbers(info[2]);
                             
-                            Room room = new Room(num_room, roomType, floor_number);
+                            Room space = new Room(num_room, roomType, floor_number);
                             
-                            list_rooms.addEnd(room);
+                            list.addEnd(space);
                         }else{
                             JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
                             break;

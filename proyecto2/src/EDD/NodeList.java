@@ -6,7 +6,7 @@ package EDD;
 
 /**
  *
- * @author 58414
+ * @author Gabriel Flores
  */
 public class NodeList {
     private Object tInfo;

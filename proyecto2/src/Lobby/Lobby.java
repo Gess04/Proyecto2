@@ -8,7 +8,7 @@ import Interfaces.Welcome;
 
 /**
  *
- * @author 58414
+ * @author Gabriel Flores
  */
 public class Lobby {
 

@@ -7,7 +7,7 @@ import Classes.*;
 
 /**
  *
- * @author 58414
+ * @author Gabriel FloresS
  */
 public class NodeAVL {
     private int key;

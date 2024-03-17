@@ -22,7 +22,7 @@ public class Welcome extends javax.swing.JFrame {
      */
     public static HashTable state = new HashTable();
     public static BST reservation = new BST();
-    public static List list_rooms = new List();       
+    public static BST rooms = new BST();       
     public Welcome() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -82,6 +82,7 @@ public class Welcome extends javax.swing.JFrame {
         FileCSV file = new FileCSV();
         file.Read_state(state);
         file.Read_bookings(reservation);
+  
         String chain = "";
         
         //Client client = new Client("Arielle", "Bragger");
