@@ -26,7 +26,7 @@ public class Functions {
         if (found == false) {
             JOptionPane.showMessageDialog(null, "No hay reservacion");
         }else{
-            
+            JOptionPane.showMessageDialog(null, "Cargado");
         }
     }
     
@@ -95,24 +95,6 @@ public class Functions {
             }
         }else{
         JOptionPane.showMessageDialog(null, "El cliente no tiene reserva");
-        }
-    }
-
-    public void load_hashtable(List list1, Reservation reserv, HashTable table){
-        NodeList aux = list1.getPfirst();
-        boolean find = false;
-        while(aux != null && find != true){
-            if(aux.gettInfo().equals(reserv)){
-                find = true;
-                break;
-            }else{
-                aux = aux.getpNext();
-            }
-        }
-        if(find == false){
-            JOptionPane.showMessageDialog(null, "No hay reservacion");
-        }else{
-            JOptionPane.showMessageDialog(null, "Cargado");
         }
     }
     
