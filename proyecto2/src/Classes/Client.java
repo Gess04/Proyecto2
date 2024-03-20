@@ -44,6 +44,15 @@ public class Client {
         this.id = 0;
         this.phoneNumber = null;
     }
+    
+    public Client(String name, String lastname, String email, String sex, int id) {
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.sex = sex;
+        this.id = id;
+        this.phoneNumber = null;
+    }
 
     /**
      * @return the name

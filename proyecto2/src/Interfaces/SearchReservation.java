@@ -6,6 +6,8 @@ package Interfaces;
 
 import Functions.Functions;
 import Functions.Helpers;
+import static Interfaces.Welcome.reservations;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,7 +45,6 @@ public class SearchReservation extends javax.swing.JFrame {
         search = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         searchByID = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -78,8 +79,8 @@ public class SearchReservation extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Ingrese la cedula de la reservacion que desea buscar:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        jLabel1.setText("Ingrese la cedula del:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         searchByID.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         searchByID.addActionListener(new java.awt.event.ActionListener() {
@@ -88,11 +89,6 @@ public class SearchReservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(searchByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 310, 30));
-
-        jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("La cedula indica el parametro de busqueda para encontrar una reservacion!");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 380));
@@ -114,7 +110,20 @@ public class SearchReservation extends javax.swing.JFrame {
     }//GEN-LAST:event_searchByIDActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        Helpers help = new Helpers();
+        String cedula = searchByID.getText();
+        int ci = help.ValidateID(cedula);
         
+        if(ci != -1){
+            if(reservations.searchNode2(reservations.getRoot(), ci) != null){
+                JOptionPane.showMessageDialog(null, reservations.searchNode2(reservations.getRoot(), ci).getReservation().toString());
+            }else{
+                JOptionPane.showMessageDialog(null, "La cedula " + ci + " no se ha encontrado");
+            }     
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "La cedula no es valida");
+        }
     }//GEN-LAST:event_searchActionPerformed
 
     /**
@@ -159,7 +168,6 @@ public class SearchReservation extends javax.swing.JFrame {
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton search;

@@ -143,7 +143,7 @@ public class List {
         if(!isEmpty()){
             NodeList pointer = getPfirst();
             while(pointer!=null){
-            System.out.println("["+pointer.gettInfo()+"]");
+            System.out.println("["+pointer.gettInfo().toString()+"]");
             pointer = pointer.getpNext();
             }
         }else{
