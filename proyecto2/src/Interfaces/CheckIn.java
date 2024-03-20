@@ -34,11 +34,11 @@ public class CheckIn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        background = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         number = new javax.swing.JTextField();
-        background = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         id = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -51,6 +51,8 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         bottomSave = new javax.swing.JButton();
         comboSex = new javax.swing.JComboBox<>();
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -78,9 +80,6 @@ public class CheckIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 230, -1));
-
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 470, 370));
 
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

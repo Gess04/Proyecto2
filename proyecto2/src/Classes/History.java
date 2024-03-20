@@ -12,13 +12,17 @@ public class History {
     private Client client;
     private String dateIn;
     private String dateOut;
-    private String roomNumber;
 
-    public History(Client client, String dateIn, String dateOut, String roomNumber) {
+    public History(Client client, String dateIn, String dateOut) {
         this.client = client;
         this.dateIn = dateIn;
         this.dateOut = dateOut;
-        this.roomNumber = roomNumber;
+    }
+    
+    public History(Client client, String dateOut) {
+        this.client = client;
+        this.dateIn = null;
+        this.dateOut = dateOut;
     }
 
     /**
@@ -63,22 +67,11 @@ public class History {
         this.dateOut = dateOut;
     }
 
-    /**
-     * @return the roomNumber
-     */
-    public String getRoomNumber() {
-        return roomNumber;
-    }
-
-    /**
-     * @param roomNumber the roomNumber to set
-     */
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
+    @Override
+    public String toString() {
+        return "History{" + "client=" + client.getId() + ", dateIn=" + dateIn + ", dateOut=" + dateOut + '}';
     }
     
-    public void show() {
-        
-    }
+    
 }
 

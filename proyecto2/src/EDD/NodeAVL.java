@@ -7,15 +7,17 @@ import Classes.*;
 
 /**
  *
- * @author Gabriel FloresS
+ * @author Gabriel Flores
  */
 public class NodeAVL {
     private int key;
+    private Room room;
     private int height;
     private NodeAVL left;
     private NodeAVL right;
 
-    public NodeAVL(int key) {
+    public NodeAVL(int key, Room room) {
+        this.room =  room;
         this.key = key;
         this.height = 1;
         this.left = null;
@@ -69,4 +71,14 @@ public class NodeAVL {
     public void setHeight(int height) {
         this.height = height;
     }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+    
+    
 }

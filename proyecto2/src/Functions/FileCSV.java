@@ -73,7 +73,7 @@ public class FileCSV {
         }
 
     }
-    public void Read_rooms(List list){
+    public void Read_rooms(AVL rooms){
         String line;
         String expresion_txt = "";
         String path = "test\\rooms.csv";
@@ -100,7 +100,8 @@ public class FileCSV {
                             
                             Room space = new Room(num_room, roomType, floor_number);
                             
-                            list.addEnd(space);
+                            rooms.insert(num_room, space);
+                            
                         }else{
                             JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
                             break;
@@ -164,5 +165,53 @@ public class FileCSV {
         } catch (HeadlessException | IOException ex){
             JOptionPane.showMessageDialog(null, "Error al leer la expresion");
         }
+    }
+    
+    public void Read_history(AVL rooms){ 
+        String line;
+        String expresion_txt = "";
+        String path = "test\\history.csv";
+        File file = new File(path);
+        try{
+            if(!file.exists()){
+               file.createNewFile();
+            }else{
+                FileReader fr = new FileReader(file);
+                BufferedReader br = new BufferedReader(fr);
+                while((line = br.readLine())!= null){
+                    if(!line.isEmpty()){
+                        expresion_txt += line + "\n";
+                    }
+                }
+                if (!"".equals(expresion_txt)){
+                    String[] expresion_split = expresion_txt.split("\n");
+                    for(int i =0;i < expresion_split.length;i++){
+                        String[] info = expresion_split[i].split(",");
+                        //if(help.ValidateID(info[0]) != -1 && help.ValidateEmail(info[3]) != null && help.ValidateNumbers(info[6]) != -1){
+                            int id = help.ValidateID(info[0]);
+                            String name = info[1];
+                            String last_name = info[2];
+                            String email = help.ValidateEmail(info[3]);
+                            String sex = info[4];
+                            String date = info[5];
+                            int num_hab = help.ValidateNumbers(info[6]);
+                            
+                            Client client = new Client(name,last_name,email,sex,id);
+                            
+                            History history =  new History(client, date);
+                            
+                            rooms.searchByKey(num_hab).getHistarial().addEnd(history);
+                        //}else{
+                            //JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
+                            //break;
+                        //}   
+                    }
+                }
+                br.close();
+            }  
+        } catch (HeadlessException | IOException ex){
+            JOptionPane.showMessageDialog(null, "Error al leer la expresion");
+        }
+
     }
 }
