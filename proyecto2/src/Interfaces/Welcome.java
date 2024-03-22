@@ -24,6 +24,7 @@ public class Welcome extends javax.swing.JFrame {
     public static HashTable states = new HashTable();
     public static BST reservations = new BST();
     public static AVL rooms = new AVL();
+    public static List room_availables = new List();
 
     public Welcome() {
         initComponents();
@@ -81,23 +82,21 @@ public class Welcome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        
         FileCSV file = new FileCSV();
         file.Read_state(states);
         file.Read_bookings(reservations);
         file.Read_rooms(rooms);
         file.Read_history(rooms);
-        //rooms.inOrden();
         
-        
-        
-       rooms.searchByKey(254).mostrar_historial();
-//        String chain = "";
-//
-//        Client client = new Client("Arielle", "Bragger");
-//        System.out.println(states.isInHashIndexN(client));
+        states.Availables(room_availables);
+        for (int i = 0; i < room_availables.getSize(); i++) {
+            int num_hab = (int) room_availables.getValor(i);
+            num_hab ++;
+            rooms.searchByKey(num_hab).setAvailable(true);
+        }
 
         JOptionPane.showMessageDialog(null, "Datos Cargados.");
-//        System.out.println(reservations.preOrder2(reservations.getRoot(),chain));
         this.setVisible(false);
         Welcome b = new Welcome();
         Menu window1 = new Menu(b);
