@@ -133,5 +133,44 @@ public class BST {
             System.out.println("{ " + root.getReservation().toString() + " }");
         }
     }
+    
+    public void deleteByClientId(int clientId) {
+        this.root = deleteRecursively(root, clientId);
+    }
+
+    private NodeBST deleteRecursively(NodeBST current, int clientId) {
+        if (current == null) {
+            return null;
+        }
+
+        if (current.getReservation().getClient().getId() == clientId) {
+            if (current.getLeft() == null && current.getRight() == null) {
+                return null;
+            }
+            
+            if (current.getRight() == null) {
+                return current.getLeft();
+            }
+            
+            if (current.getLeft() == null) {
+                return current.getRight();
+            }
+
+            int smallestValueId = findSmallestClientId(current.getRight());
+            current.getReservation().getClient().setId(smallestValueId);
+            current.setRight(deleteRecursively(current.getRight(), smallestValueId));
+            return current;
+        } 
+        if (clientId < current.getReservation().getClient().getId()) {
+            current.setLeft(deleteRecursively(current.getLeft(), clientId));
+        } else {
+            current.setRight(deleteRecursively(current.getRight(), clientId));
+        }
+        return current;
+    }
+
+    private int findSmallestClientId(NodeBST root) {
+        return root.getLeft() == null ? root.getReservation().getClient().getId() : findSmallestClientId(root.getLeft());
+    }
 
 }

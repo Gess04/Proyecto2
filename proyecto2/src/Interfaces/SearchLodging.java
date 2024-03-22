@@ -139,7 +139,8 @@ public class SearchLodging extends javax.swing.JFrame {
         
         Client client = new Client(name,lastname);
         if(states.isInHashIndexN(client) != -1){
-            JOptionPane.showMessageDialog(null, "El cliente " + name + " "+ lastname + " esta hospedado en la habitacion " + states.isInHashIndexN(client));
+            int num_hab = states.isInHashIndexN(client) + 1;
+            JOptionPane.showMessageDialog(null, "El cliente " + name + " "+ lastname + " esta hospedado en la habitacion " +  num_hab);
         }else{
             JOptionPane.showMessageDialog(null, "El cliente " + name + " "+ lastname + " no esta hospedado");
         }
