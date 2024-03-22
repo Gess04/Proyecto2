@@ -97,13 +97,13 @@ public class History extends javax.swing.JFrame {
     private void search_buttomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_buttomActionPerformed
         Helpers help = new Helpers();
         String num = num_search.getText();
-        int roomNumber = help.ValidateNumbers(num);
+        int num_hab = help.ValidateNumbers(num);
         
-        if(roomNumber != -1){
-            if(rooms.searchByKey(roomNumber).showHistory() != null){
-                JOptionPane.showMessageDialog(null,rooms.searchByKey(roomNumber).showHistory());
+        if(num_hab != -1){
+            if(rooms.searchByKey(num_hab).mostrar_historial() != null){
+                JOptionPane.showMessageDialog(null,rooms.searchByKey(num_hab).mostrar_historial());
             }else{
-                JOptionPane.showMessageDialog(null, "No ha pasado nadie por la habitacion " + roomNumber);
+                JOptionPane.showMessageDialog(null, "+No ha pasado nadie por la habitacion " + num_hab);
             }
         }else{
             JOptionPane.showMessageDialog(null, "el numero de habitacion no es valido");

@@ -11,81 +11,80 @@ import Classes.*;
  */
 public class HashTable {
     private int size;
-    private Status[] status;
+    private Status[] state;
 
     public HashTable() {
         this.size = 300;
-        this.status = new Status[size];
+        this.state = new Status[size];
     }
-    
+
     public int getSize() {
         return size;
     }
-    
+
     public void setSize(int size) {
         this.size = size;
     }
 
-    public Status[] getStatus() {
-        return status;
+    public Status[] getState() {
+        return state;
     }
 
-    
-    public void setStatus(Status[] status) {
-        this.status = status;
+    public void setState(Status[] state) {
+        this.state = state;
     }
     
     public void initTable(){
-        setStatus(new Status[getSize()]);
+        setState(new Status[getSize()]);
         for (int i = 0; i < size; i++) {
-            getStatus()[i] = null;
+            getState()[i] = null;
         }
     }
     
-    public int insertStatus(Status status){
-        if (!isInHash(status)) {
-            int index = status.getNum_hab()-1;
-            if(getStatus()[index] == null){
-                getStatus()[index] = status;
-                return index;
+    public void insertState(Status state){
+         if (!isInHash(state)) {
+            int index = state.getNum_hab()-1;
+            while (getState()[index] != null) {
+                index++;
             }
-            
-            return 0;
-            
+//            JOptionPane.showMessageDialog(null, "La clave del Cliente " + estado.getCliente().getNombre()+ " es: " + index);
+            getState()[index] = state;
         } else{
-        return -1;
+//            JOptionPane.showMessageDialog(null, "¡ERROR!\nEl estado ya está registrado");
         }
+
     }
     
-    public boolean isInHash(Status status){
+    public boolean isInHash(Status state){
         boolean aux = false;
-        for (int i = 0; i < this.getStatus().length; i++) {
-            if (getStatus()[i] != null){
-                if (getStatus()[i].compareState(status)){
+        for (int i = 0; i < this.getState().length; i++) {
+            if (getState()[i] != null){
+                if (getState()[i].compareState(state)){
                     aux = true;
                 }
             }
         }
         return aux;
+
     }
     
-    public int isInHashIndex(Status status){
-        for (int i = 0; i < this.getStatus().length; i++) {
-            if (getStatus()[i] != null){
-                if (getStatus()[i].compareState(status)){
-                    return i;
+    public int isInHashIndex(Status state){
+        for (int i = 0; i < this.getState().length; i++) {
+            if (getState()[i] != null){
+                if (getState()[i].compareState(state)){
+                    return i+1;
                 }
             }
         }
         
         return -1;
     }
-    
+    //Busca el cliente por nombre.
     public int isInHashIndexN(Client client){
-        for (int i = 0; i < this.getStatus().length; i++) {
-            if (getStatus()[i] != null){
-                if (getStatus()[i].getClient().getName().equalsIgnoreCase(client.getName()) && getStatus()[i].getClient().getLastname().equalsIgnoreCase(client.getLastname())){
-                    return i;
+        for (int i = 0; i < this.getState().length; i++) {
+            if (getState()[i] != null){
+                if (getState()[i].getClient().getName().equalsIgnoreCase(client.getName()) && getState()[i].getClient().getLastname().equalsIgnoreCase(client.getLastname())){
+                    return i+1;
                 }
             }
         }
@@ -94,9 +93,8 @@ public class HashTable {
     }
     
     public void Availables(List room_availables){
-        for (int i = 0; i < status.length; i++) {
-            if (status[i] == null){
-                
+        for (int i = 1; i < this.getState().length; i++) {
+            if (getState()[i] == null){
                 room_availables.addEnd(i);
             }
         }
