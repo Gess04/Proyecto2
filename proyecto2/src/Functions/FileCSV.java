@@ -24,7 +24,7 @@ public class FileCSV {
     public void Read_bookings(BST tree_reservation){ 
         String line;
         String expresion_txt = "";
-        String path = "test\\bookings.csv";
+        String path = "test//bookings.csv";
         File file = new File(path);
         try{
             if(!file.exists()){
@@ -76,7 +76,7 @@ public class FileCSV {
     public void Read_rooms(AVL rooms){
         String line;
         String expresion_txt = "";
-        String path = "test\\rooms.csv";
+        String path = "test//rooms.csv";
         File file = new File(path);
         try{
             if(!file.exists()){
@@ -118,7 +118,7 @@ public class FileCSV {
     public void Read_state(HashTable table){
         String line;
         String expresion_txt = "";
-        String path = "test\\state.csv";
+        String path = "test//state.csv";
         File file = new File(path);
         try{
             if(!file.exists()){
@@ -152,7 +152,7 @@ public class FileCSV {
                                 
                                 Status state = new Status(num_room, client,arrival_date);
                                 
-                                table.insertState(state);  
+                                table.insertStatus(state);  
                             }else{
                                 //JOptionPane.showMessageDialog(null, "Hay un error en algun dato");
                                 break;
@@ -170,7 +170,7 @@ public class FileCSV {
     public void Read_history(AVL rooms){ 
         String line;
         String expresion_txt = "";
-        String path = "test\\history.csv";
+        String path = "test//history.csv";
         File file = new File(path);
         try{
             if(!file.exists()){
@@ -200,7 +200,7 @@ public class FileCSV {
                             
                             History history =  new History(client, date);
                             
-                            rooms.searchByKey(num_hab).getHistarial().addEnd(history);
+                            rooms.searchByKey(num_hab).getHistory().addEnd(history);
                         //}else{
                             //JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
                             //break;
