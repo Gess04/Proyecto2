@@ -109,14 +109,17 @@ public class AVL {
     }
     
     public Room searchByKey(int key) {
-        NodeAVL actual = root;
+        NodeAVL actual = root; // Comenzamos la búsqueda desde la raíz
 
         while (actual != null) {
-            if (key < actual.getKey()) {               
+            if (key < actual.getKey()) {
+                // Si la clave buscada es menor, nos movemos hacia el subárbol izquierdo
                 actual = actual.getLeft();
             } else if (key > actual.getKey()) {
+                // Si la clave buscada es mayor, nos movemos hacia el subárbol derecho
                 actual = actual.getRight();
             } else {
+                // Clave encontrada, retornamos la habitación asociada
                 return actual.getRoom();
             }
         }

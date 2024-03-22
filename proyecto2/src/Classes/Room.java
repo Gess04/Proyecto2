@@ -14,15 +14,15 @@ public class Room {
     private int roomNum;
     private String roomType;
     private int floor;
-    private boolean available;
-    private List history;
+    private boolean dispo;
+    private List historial;
 
     public Room(int roomNum, String roomType, int floor) {
         this.roomNum = roomNum;
         this.roomType = roomType;
         this.floor = floor;
-        this.available = false;
-        this.history = new List();
+        this.dispo = true;
+        this.historial = new List();
     }
 
     /**
@@ -67,32 +67,20 @@ public class Room {
         this.floor = floor;
     }
     
-    /**
-     * @return the available
-     */
-    public boolean isAvailable() {
-        return available;
+      public boolean isDispo() {
+        return dispo;
     }
 
-    /**
-     * @param available the available to set
-     */
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public void setDispo(boolean dispo) {
+        this.dispo = dispo;
     }
 
-    /**
-     * @return the history
-     */
-    public List getHistory() {
-        return history;
+    public List getHistarial() {
+        return historial;
     }
 
-    /**
-     * @param history the history to set
-     */
-    public void setHistory(List history) {
-        this.history = history;
+    public void setHistarial(List historial) {
+        this.historial = historial;
     }
     
     
@@ -101,13 +89,12 @@ public class Room {
         return "\nNumero de habitacion: " + roomNum + "\nTipo de habitación: " + roomType + "\nPiso: " + floor ;
     }
     
-    public String showHistory(){
-        if(!history.isEmpty()){
-            return getHistory().transform();
+    public String mostrar_historial(){
+        if(!historial.isEmpty()){
+            return historial.transform();
         }
         return null;
     }
-
-
+    
 }
 

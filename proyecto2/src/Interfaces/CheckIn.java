@@ -3,17 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaces;
-
-import Classes.Reservation;
-import Classes.Status;
-import EDD.List;
-import Functions.Helpers;
-import static Interfaces.Welcome.reservations;
-import static Interfaces.Welcome.room_availables;
-import static Interfaces.Welcome.rooms;
-import static Interfaces.Welcome.states;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author Christian
@@ -23,15 +13,16 @@ public class CheckIn extends javax.swing.JFrame {
     /**
      * Creates new form CheckIn
      */
-    public static Menu v1;
-
-    public CheckIn(Menu v1) {
-        initComponents();
-        this.v1 = v1;
-        v1.setVisible(false);
-        this.setLocationRelativeTo(null);
-        this.setResizable(false);
-        bottomSave.setEnabled(false);
+    
+        public static Menu v1;
+        
+        public CheckIn(Menu v1) {
+            initComponents();
+            this.v1 = v1;
+            v1.setVisible(false);
+            this.setLocationRelativeTo(null);
+            this.setResizable(false);
+            bottomSave.setEnabled(false);
     }
 
     /**
@@ -47,10 +38,19 @@ public class CheckIn extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        input_ci = new javax.swing.JTextField();
+        number = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
+        id = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lastName = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        email = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         bottomSave = new javax.swing.JButton();
-        hospedar = new javax.swing.JButton();
+        comboSex = new javax.swing.JComboBox<>();
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
 
@@ -74,14 +74,57 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel3.setText("Check In");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
 
-        input_ci.addActionListener(new java.awt.event.ActionListener() {
+        number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_ciActionPerformed(evt);
+                numberActionPerformed(evt);
             }
         });
-        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 230, -1));
+        jPanel1.add(number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 230, -1));
 
-        jLabel7.setText("Ingrese la cedula:");
+        name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 230, -1));
+
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 230, -1));
+
+        jLabel1.setText("Introduzca el número de teléfono del huésped:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 300, -1));
+
+        jLabel2.setText("Introduzca el nombre del huésped:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 300, -1));
+
+        jLabel4.setText("Introduzca el apellido del huésped:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 300, -1));
+
+        jLabel5.setText("Introduzca la cédula del huésped:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 300, -1));
+
+        lastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lastNameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 230, -1));
+
+        jLabel6.setText("Indique el sexo del huésped:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 230, -1));
+
+        email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailActionPerformed(evt);
+            }
+        });
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 230, -1));
+
+        jLabel7.setText("Introduzca el correo electrónico  del huésped:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 300, -1));
 
         bottomSave.setText("Guardar");
@@ -92,13 +135,13 @@ public class CheckIn extends javax.swing.JFrame {
         });
         jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, -1));
 
-        hospedar.setText("Hospedar");
-        hospedar.addActionListener(new java.awt.event.ActionListener() {
+        comboSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+        comboSex.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hospedarActionPerformed(evt);
+                comboSexActionPerformed(evt);
             }
         });
-        jPanel1.add(hospedar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
+        jPanel1.add(comboSex, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 360));
 
@@ -109,63 +152,40 @@ public class CheckIn extends javax.swing.JFrame {
         this.setVisible(false);
         Welcome b = new Welcome();
         Menu window1 = new Menu(b);
-        window1.setVisible(true);
+        window1.setVisible(true);  
     }//GEN-LAST:event_backActionPerformed
 
-    private void input_ciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_ciActionPerformed
+    private void numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numberActionPerformed
 
-    }//GEN-LAST:event_input_ciActionPerformed
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameActionPerformed
+
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idActionPerformed
+
+    private void lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lastNameActionPerformed
+
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailActionPerformed
+
+    private void comboSexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboSexActionPerformed
 
     private void bottomSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottomSaveActionPerformed
-
+        JOptionPane.showMessageDialog(null, "Huésped guardado exitosamente!");
+        this.setVisible(false);
+        Welcome b = new Welcome();
+        Menu window1 = new Menu(b);
+        window1.setVisible(true);
     }//GEN-LAST:event_bottomSaveActionPerformed
-
-    private void hospedarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospedarActionPerformed
-        Helpers help = new Helpers();
-        String id = input_ci.getText();
-        int ci = help.ValidateID(id);
-        List habs_disp = new List();
-
-        if (ci != -1) {
-            if (reservations.searchNode2(reservations.getRoot(), ci) != null) {
-                Reservation reservation = reservations.searchNode2(reservations.getRoot(), ci).getReservation();
-
-                for (int i = 0; i < room_availables.getSize(); i++) {
-                    int num_hab = (int) room_availables.getValor(i) + 1;
-                    
-                    if(rooms.searchByKey(num_hab).getRoomType().equalsIgnoreCase(reservation.getRoomType())){
-                        habs_disp.addEnd(num_hab);
-                    }
-                }
-
-                if (habs_disp.getSize() == 0) {
-                    JOptionPane.showMessageDialog(null, "No hay habitacion del tipo deseado disponible");
-                } else {
-                    Status status = new Status(-1, reservations.searchNode2(reservations.getRoot(), ci).getReservation().getClient(), reservations.searchNode2(reservations.getRoot(), ci).getReservation().getCheckIn());
-                    int count = 0;
-                    for (int i = 0; i < habs_disp.getSize(); i++) {
-                        int num_hab = (int) habs_disp.getValor(i);
-                        status.setNum_hab(num_hab);
-                        if (states.insertStatus(status) != 0 || states.insertStatus(status) != -1) {
-                            room_availables.clear();
-                            states.Availables(room_availables);
-                            reservations.deleteByClientId(ci);
-                            JOptionPane.showMessageDialog(null, "El cliente se ha hospedado en la habitacion " + num_hab);
-                            count ++;
-                            break;
-                        }
-                    }
-                    if(count == 0){ 
-                        JOptionPane.showMessageDialog(null, "No hay habitación del tipo deseado disponible");
-                    }
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "La cedula " + ci + " no se ha encontrado");
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "La cedula no es valida");
-        }
-    }//GEN-LAST:event_hospedarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,10 +227,19 @@ public class CheckIn extends javax.swing.JFrame {
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
     private javax.swing.JButton bottomSave;
-    private javax.swing.JButton hospedar;
-    private javax.swing.JTextField input_ci;
+    private javax.swing.JComboBox<String> comboSex;
+    private javax.swing.JTextField email;
+    private javax.swing.JTextField id;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField lastName;
+    private javax.swing.JTextField name;
+    private javax.swing.JTextField number;
     // End of variables declaration//GEN-END:variables
 }
