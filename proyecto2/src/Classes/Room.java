@@ -4,6 +4,8 @@
  */
 package Classes;
 
+import EDD.List;
+
 /**
  *
  * @author tomasaraujo
@@ -12,11 +14,15 @@ public class Room {
     private int roomNum;
     private String roomType;
     private int floor;
+    private boolean available;
+    private List history;
 
     public Room(int roomNum, String roomType, int floor) {
         this.roomNum = roomNum;
         this.roomType = roomType;
         this.floor = floor;
+        this.available = false;
+        this.history = new List();
     }
 
     /**
@@ -61,9 +67,47 @@ public class Room {
         this.floor = floor;
     }
     
+    /**
+     * @return the available
+     */
+    public boolean isAvailable() {
+        return available;
+    }
+
+    /**
+     * @param available the available to set
+     */
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    /**
+     * @return the history
+     */
+    public List getHistory() {
+        return history;
+    }
+
+    /**
+     * @param history the history to set
+     */
+    public void setHistory(List history) {
+        this.history = history;
+    }
+    
+    
     @Override
     public String toString() {
-        return "Numero de habitacion: " + roomNum + "\nTipo de habitación: " + roomType + "\nPiso: " + floor;
+        return "\nNumero de habitacion: " + roomNum + "\nTipo de habitación: " + roomType + "\nPiso: " + floor ;
     }
+    
+    public String showHistory(){
+        if(!history.isEmpty()){
+            return getHistory().transform();
+        }
+        return null;
+    }
+
+
 }
 

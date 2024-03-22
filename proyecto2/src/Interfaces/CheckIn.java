@@ -4,6 +4,14 @@
  */
 package Interfaces;
 
+import Classes.Reservation;
+import Classes.Status;
+import EDD.List;
+import Functions.Helpers;
+import static Interfaces.Welcome.reservations;
+import static Interfaces.Welcome.room_availables;
+import static Interfaces.Welcome.rooms;
+import static Interfaces.Welcome.states;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,45 +34,15 @@ public class CheckIn extends javax.swing.JFrame {
         bottomSave.setEnabled(false);
     }
 
-    public void Validations() {
+    public void Validation() {
 
-        if (name.getText().isEmpty()) {
-            lblName.setText("*Campo Requerido");
-        } else {
-            lblName.setText("");
-        }
-
-        if (lastName.getText().isEmpty()) {
-            lblLastName.setText("*Campo Requerido");
-        } else {
-            lblLastName.setText("");
-        }
-
-        if (id.getText().isEmpty()) {
+        if (input_ci.getText().isEmpty()) {
             lblId.setText("*Campo Requerido");
         } else {
             lblId.setText("");
         }
 
-        if (email.getText().isEmpty()) {
-            lblEmail.setText("*Campo Requerido");
-
-        } else if (!email.getText().contains("@") || !email.getText().contains(".")) {
-            lblEmail.setText("*Correo inválido");
-
-        } else {
-            lblEmail.setText("");
-        }
-
-        if (number.getText().isEmpty()) {
-            lblNumber.setText("*Campo Requerido");
-        } else {
-            lblNumber.setText("");
-        }
-
-        if (name.getText().isEmpty() || lastName.getText().isEmpty()
-                || id.getText().isEmpty() || email.getText().isEmpty()
-                || number.getText().isEmpty() || lblEmail.getText().equals("*Correo inválido")) {
+        if (input_ci.getText().isEmpty()) {
             bottomSave.setEnabled(false);
         } else {
             bottomSave.setEnabled(true);
@@ -78,24 +56,15 @@ public class CheckIn extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        number = new javax.swing.JTextField();
-        name = new javax.swing.JTextField();
-        id = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        input_ci = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        lastName = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         bottomSave = new javax.swing.JButton();
-        comboSex = new javax.swing.JComboBox<>();
         lblName = new javax.swing.JLabel();
         lblLastName = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
         lblNumber = new javax.swing.JLabel();
+        lodge = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -118,95 +87,22 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel3.setText("Check In");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
 
-        number.addActionListener(new java.awt.event.ActionListener() {
+        input_ci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                numberActionPerformed(evt);
+                input_ciActionPerformed(evt);
             }
         });
-        number.addKeyListener(new java.awt.event.KeyAdapter() {
+        input_ci.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                numberKeyReleased(evt);
+                input_ciKeyReleased(evt);
             }
         });
-        jPanel1.add(number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 230, -1));
-
-        name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameActionPerformed(evt);
-            }
-        });
-        name.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                nameKeyReleased(evt);
-            }
-        });
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 230, -1));
-
-        id.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idActionPerformed(evt);
-            }
-        });
-        id.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                idKeyReleased(evt);
-            }
-        });
-        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 230, -1));
-
-        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Introduzca el número de teléfono del huésped:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 300, -1));
-
-        jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Introduzca el nombre del huésped:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 230, -1));
-
-        jLabel4.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Introduzca el apellido del huésped:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 230, -1));
+        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 230, -1));
 
         jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Introduzca la cédula del huésped:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 220, -1));
-
-        lastName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lastNameActionPerformed(evt);
-            }
-        });
-        lastName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                lastNameKeyReleased(evt);
-            }
-        });
-        jPanel1.add(lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 230, -1));
-
-        jLabel6.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Indique el sexo del huésped:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 230, 20));
-
-        email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
-            }
-        });
-        email.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                emailKeyReleased(evt);
-            }
-        });
-        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 230, -1));
-
-        jLabel7.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Introduzca el correo electrónico del huésped:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 290, -1));
 
         bottomSave.setBackground(new java.awt.Color(0, 0, 0));
         bottomSave.setForeground(new java.awt.Color(255, 255, 255));
@@ -216,15 +112,7 @@ public class CheckIn extends javax.swing.JFrame {
                 bottomSaveActionPerformed(evt);
             }
         });
-        jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 90, 40));
-
-        comboSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
-        comboSex.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboSexActionPerformed(evt);
-            }
-        });
-        jPanel1.add(comboSex, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 70, -1, -1));
+        jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 90, 40));
 
         lblName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
@@ -246,8 +134,18 @@ public class CheckIn extends javax.swing.JFrame {
         lblNumber.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(lblNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 300, 20));
 
+        lodge.setBackground(new java.awt.Color(0, 0, 0));
+        lodge.setForeground(new java.awt.Color(255, 255, 255));
+        lodge.setText("Hospedar");
+        lodge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lodgeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, 40));
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 600, 730));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 600, 410));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
 
@@ -261,29 +159,9 @@ public class CheckIn extends javax.swing.JFrame {
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
-    private void numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberActionPerformed
+    private void input_ciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_ciActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_numberActionPerformed
-
-    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameActionPerformed
-
-    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idActionPerformed
-
-    private void lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lastNameActionPerformed
-
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
-
-    private void comboSexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSexActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboSexActionPerformed
+    }//GEN-LAST:event_input_ciActionPerformed
 
     private void bottomSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottomSaveActionPerformed
         JOptionPane.showMessageDialog(null, "Huésped guardado exitosamente!");
@@ -293,25 +171,56 @@ public class CheckIn extends javax.swing.JFrame {
         window1.setVisible(true);
     }//GEN-LAST:event_bottomSaveActionPerformed
 
-    private void nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameKeyReleased
-        Validations();
-    }//GEN-LAST:event_nameKeyReleased
+    private void input_ciKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_ciKeyReleased
+        Validation();
+    }//GEN-LAST:event_input_ciKeyReleased
 
-    private void lastNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lastNameKeyReleased
-        Validations();
-    }//GEN-LAST:event_lastNameKeyReleased
+    private void lodgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lodgeActionPerformed
+        Helpers help = new Helpers();
+        String id = input_ci.getText();
+        int ci = help.ValidateID(id);
+        List habs_disp = new List();
 
-    private void idKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idKeyReleased
-        Validations();
-    }//GEN-LAST:event_idKeyReleased
+        if (ci != -1) {
+            if (reservations.searchNode2(reservations.getRoot(), ci) != null) {
+                Reservation reservation = reservations.searchNode2(reservations.getRoot(), ci).getReservation();
 
-    private void emailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailKeyReleased
-        Validations();
-    }//GEN-LAST:event_emailKeyReleased
+                for (int i = 0; i < room_availables.getSize(); i++) {
+                    int num_hab = (int) room_availables.getValor(i) + 1;
+                    
+                    if(rooms.searchByKey(num_hab).getRoomType().equalsIgnoreCase(reservation.getRoomType())){
+                        habs_disp.addEnd(num_hab);
+                    }
+                }
 
-    private void numberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numberKeyReleased
-        Validations();
-    }//GEN-LAST:event_numberKeyReleased
+                if (habs_disp.getSize() == 0) {
+                    JOptionPane.showMessageDialog(null, "No hay habitación del tipo deseado disponible");
+                } else {
+                    Status status = new Status(-1, reservations.searchNode2(reservations.getRoot(), ci).getReservation().getClient(), reservations.searchNode2(reservations.getRoot(), ci).getReservation().getCheckIn());
+                    int count = 0;
+                    for (int i = 0; i < habs_disp.getSize(); i++) {
+                        int num_hab = (int) habs_disp.getValor(i);
+                        status.setNum_hab(num_hab);
+                        if (states.insertStatus(status) != 0 || states.insertStatus(status) != -1) {
+                            room_availables.clear();
+                            states.Availables(room_availables);
+                            reservations.deleteByClientId(ci);
+                            JOptionPane.showMessageDialog(null, "El cliente se ha hospedado en la habitacion " + num_hab);
+                            count ++;
+                            break;
+                        }
+                    }
+                    if(count == 0){ 
+                        JOptionPane.showMessageDialog(null, "No hay habitación del tipo deseado disponible");
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "La cédula " + ci + " no se ha encontrado");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "La cédula no es valida");
+        }
+    }//GEN-LAST:event_lodgeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,24 +262,15 @@ public class CheckIn extends javax.swing.JFrame {
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
     private javax.swing.JButton bottomSave;
-    private javax.swing.JComboBox<String> comboSex;
-    private javax.swing.JTextField email;
-    private javax.swing.JTextField id;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField input_ci;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField lastName;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblLastName;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNumber;
-    private javax.swing.JTextField name;
-    private javax.swing.JTextField number;
+    private javax.swing.JButton lodge;
     // End of variables declaration//GEN-END:variables
 }

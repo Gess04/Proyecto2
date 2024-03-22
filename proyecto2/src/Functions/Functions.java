@@ -82,7 +82,7 @@ public class Functions {
                 
                 if (room.getRoomType().equalsIgnoreCase(reserv.getRoomType())) {
                     Status status = new Status(room.getRoomNum(), reserv.getClient(), reserv.getCheckIn());
-                    table.insertState(status);
+                    table.insertStatus(status);
                     bookings.deleteByReference(indexReservation(bookings, id));
                     count++;
                     break;

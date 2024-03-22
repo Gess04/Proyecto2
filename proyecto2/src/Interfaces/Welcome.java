@@ -5,6 +5,7 @@
 package Interfaces;
 
 import Classes.Client;
+import EDD.AVL;
 import EDD.BST;
 import EDD.HashTable;
 import EDD.List;
@@ -20,9 +21,10 @@ public class Welcome extends javax.swing.JFrame {
     /**
      * Creates new form Welcome
      */
-    public static HashTable state = new HashTable();
-    public static BST reservation = new BST();
-    public static BST rooms = new BST();       
+    public static HashTable states = new HashTable();
+    public static BST reservations = new BST();
+    public static AVL rooms = new AVL();
+
     public Welcome() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -80,15 +82,22 @@ public class Welcome extends javax.swing.JFrame {
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         FileCSV file = new FileCSV();
-        file.Read_state(state);
-        file.Read_bookings(reservation);
-  
-        String chain = "";
+        file.Read_state(states);
+        file.Read_bookings(reservations);
+        file.Read_rooms(rooms);
+        file.Read_history(rooms);
+        //rooms.inOrden();
         
-        //Client client = new Client("Arielle", "Bragger");
-        //System.out.println(state.isInHashIndexN(client));
-         JOptionPane.showMessageDialog(null,"Datos Cargados.");
-//        System.out.println(reservation.preOrder2(reservation.get), chain));
+        
+        
+       rooms.searchByKey(254).mostrar_historial();
+//        String chain = "";
+//
+//        Client client = new Client("Arielle", "Bragger");
+//        System.out.println(states.isInHashIndexN(client));
+
+        JOptionPane.showMessageDialog(null, "Datos Cargados.");
+//        System.out.println(reservations.preOrder2(reservations.getRoot(),chain));
         this.setVisible(false);
         Welcome b = new Welcome();
         Menu window1 = new Menu(b);

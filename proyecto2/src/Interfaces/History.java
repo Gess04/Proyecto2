@@ -4,6 +4,10 @@
  */
 package Interfaces;
 
+import Functions.Helpers;
+import static Interfaces.Welcome.rooms;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Christian
@@ -36,6 +40,8 @@ public class History extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        num_search = new javax.swing.JTextField();
+        search_buttom = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,6 +64,21 @@ public class History extends javax.swing.JFrame {
         jLabel3.setText("Historial");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 30));
 
+        num_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num_searchActionPerformed(evt);
+            }
+        });
+        jPanel1.add(num_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 390, 30));
+
+        search_buttom.setText("Buscar");
+        search_buttom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_buttomActionPerformed(evt);
+            }
+        });
+        jPanel1.add(search_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 100, 40));
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -72,6 +93,26 @@ public class History extends javax.swing.JFrame {
         Menu window1 = new Menu(b);
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
+
+    private void search_buttomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_buttomActionPerformed
+        Helpers help = new Helpers();
+        String num = num_search.getText();
+        int roomNumber = help.ValidateNumbers(num);
+        
+        if(roomNumber != -1){
+            if(rooms.searchByKey(roomNumber).showHistory() != null){
+                JOptionPane.showMessageDialog(null,rooms.searchByKey(roomNumber).showHistory());
+            }else{
+                JOptionPane.showMessageDialog(null, "No ha pasado nadie por la habitación " + roomNumber);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "El número de habitación no es válido");
+        }
+    }//GEN-LAST:event_search_buttomActionPerformed
+
+    private void num_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_num_searchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,5 +155,7 @@ public class History extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField num_search;
+    private javax.swing.JButton search_buttom;
     // End of variables declaration//GEN-END:variables
 }
