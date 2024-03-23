@@ -100,8 +100,8 @@ public class History extends javax.swing.JFrame {
         int num_hab = help.ValidateNumbers(num);
         
         if(num_hab != -1){
-            if(rooms.searchByKey(num_hab).mostrar_historial() != null){
-                JOptionPane.showMessageDialog(null,rooms.searchByKey(num_hab).mostrar_historial());
+            if(rooms.searchByKey(num_hab).showHistory() != null){
+                JOptionPane.showMessageDialog(null,rooms.searchByKey(num_hab).showHistory());
             }else{
                 JOptionPane.showMessageDialog(null, "+No ha pasado nadie por la habitacion " + num_hab);
             }
