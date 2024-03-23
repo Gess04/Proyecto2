@@ -26,7 +26,7 @@ public class SearchReservation extends javax.swing.JFrame {
         v1.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        bottomSave.setEnabled(false);
+        
     }
 
     public void Validation() {
@@ -37,11 +37,7 @@ public class SearchReservation extends javax.swing.JFrame {
             lblId.setText("");
         }
 
-        if (searchByID.getText().isEmpty()) {
-            bottomSave.setEnabled(false);
-        } else {
-            bottomSave.setEnabled(true);
-        }
+        
     }
 
     /**
@@ -59,7 +55,6 @@ public class SearchReservation extends javax.swing.JFrame {
         search = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         searchByID = new javax.swing.JTextField();
-        bottomSave = new javax.swing.JButton();
         lblId = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
@@ -111,16 +106,6 @@ public class SearchReservation extends javax.swing.JFrame {
         });
         jPanel1.add(searchByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 310, 30));
 
-        bottomSave.setBackground(new java.awt.Color(0, 0, 0));
-        bottomSave.setForeground(new java.awt.Color(255, 255, 255));
-        bottomSave.setText("Guardar");
-        bottomSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bottomSaveActionPerformed(evt);
-            }
-        });
-        jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 90, 40));
-
         lblId.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 260, 20));
@@ -153,7 +138,7 @@ public class SearchReservation extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
         }
 
-        if (ci != -1) {
+        else if (ci != -1) {
             if (reservations.searchNode2(reservations.getRoot(), ci) != null) {
                 JOptionPane.showMessageDialog(null, reservations.searchNode2(reservations.getRoot(), ci).getReservation().toString());
             } else {
@@ -164,13 +149,6 @@ public class SearchReservation extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "La cedula no es valida");
         }
     }//GEN-LAST:event_searchActionPerformed
-
-    private void bottomSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottomSaveActionPerformed
-        this.setVisible(false);
-        Welcome b = new Welcome();
-        Menu window1 = new Menu(b);
-        window1.setVisible(true);
-    }//GEN-LAST:event_bottomSaveActionPerformed
 
     private void searchByIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchByIDKeyReleased
         Validation();
@@ -217,7 +195,6 @@ public class SearchReservation extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
-    private javax.swing.JButton bottomSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

@@ -158,7 +158,7 @@ public class CheckIn extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
         }
 
-        if (ci != -1) {
+        else if (ci != -1) {
             if (reservations.searchNode2(reservations.getRoot(), ci) != null) {
                 Reservation reservation = reservations.searchNode2(reservations.getRoot(), ci).getReservation();
 
