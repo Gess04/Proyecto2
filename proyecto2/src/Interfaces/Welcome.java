@@ -80,7 +80,7 @@ public class Welcome extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Integrantes:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,30 +92,30 @@ public class Welcome extends javax.swing.JFrame {
         jLabel5.setText("funcionalidades como por ejemplo:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 290, -1));
 
-        jLabel6.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("- Check In");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 90, -1));
 
-        jLabel7.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("- Check Out");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 110, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 110, -1));
 
-        jLabel8.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("- Buscar Hospedaje");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 180, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 180, -1));
 
-        jLabel9.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("- Buscar Reservación");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 180, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 180, -1));
 
-        jLabel10.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("- Historial de habitaciones");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 220, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 220, -1));
 
         jLabel11.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));

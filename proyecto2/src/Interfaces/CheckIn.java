@@ -59,11 +59,7 @@ public class CheckIn extends javax.swing.JFrame {
         input_ci = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         bottomSave = new javax.swing.JButton();
-        lblName = new javax.swing.JLabel();
-        lblLastName = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
-        lblEmail = new javax.swing.JLabel();
-        lblNumber = new javax.swing.JLabel();
         lodge = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
@@ -114,25 +110,9 @@ public class CheckIn extends javax.swing.JFrame {
         });
         jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 90, 40));
 
-        lblName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
-        lblName.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 220, 30));
-
-        lblLastName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
-        lblLastName.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 290, 20));
-
         lblId.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 300, 20));
-
-        lblEmail.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
-        lblEmail.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 240, 20));
-
-        lblNumber.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
-        lblNumber.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 300, 20));
+        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 260, 20));
 
         lodge.setBackground(new java.awt.Color(0, 0, 0));
         lodge.setForeground(new java.awt.Color(255, 255, 255));
@@ -142,10 +122,10 @@ public class CheckIn extends javax.swing.JFrame {
                 lodgeActionPerformed(evt);
             }
         });
-        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, 40));
+        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, -1, 40));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 600, 410));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 490, 420));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
 
@@ -180,7 +160,11 @@ public class CheckIn extends javax.swing.JFrame {
         String id = input_ci.getText();
         int ci = help.ValidateID(id);
         List habs_disp = new List();
-
+        
+        if (input_ci.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");   
+        }
+        
         if (ci != -1) {
             if (reservations.searchNode2(reservations.getRoot(), ci) != null) {
                 Reservation reservation = reservations.searchNode2(reservations.getRoot(), ci).getReservation();
@@ -266,11 +250,7 @@ public class CheckIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblId;
-    private javax.swing.JLabel lblLastName;
-    private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblNumber;
     private javax.swing.JButton lodge;
     // End of variables declaration//GEN-END:variables
 }
