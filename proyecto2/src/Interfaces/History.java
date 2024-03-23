@@ -80,7 +80,7 @@ public class History extends javax.swing.JFrame {
                 search_buttomActionPerformed(evt);
             }
         });
-        jPanel1.add(search_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 100, 40));
+        jPanel1.add(search_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 100, 40));
 
         jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
