@@ -42,6 +42,7 @@ public class History extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         num_search = new javax.swing.JTextField();
         search_buttom = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,13 +72,20 @@ public class History extends javax.swing.JFrame {
         });
         jPanel1.add(num_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 390, 30));
 
+        search_buttom.setBackground(new java.awt.Color(0, 0, 0));
+        search_buttom.setForeground(new java.awt.Color(255, 255, 255));
         search_buttom.setText("Buscar");
         search_buttom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 search_buttomActionPerformed(evt);
             }
         });
-        jPanel1.add(search_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 100, 40));
+        jPanel1.add(search_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 100, 40));
+
+        jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Introduzca el número de la habitación:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 330, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -154,6 +162,7 @@ public class History extends javax.swing.JFrame {
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField num_search;
     private javax.swing.JButton search_buttom;

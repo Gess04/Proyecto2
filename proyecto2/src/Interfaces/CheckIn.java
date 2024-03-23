@@ -97,12 +97,12 @@ public class CheckIn extends javax.swing.JFrame {
                 input_ciKeyReleased(evt);
             }
         });
-        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 230, -1));
+        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 280, -1));
 
-        jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Introduzca la cédula del huésped:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 220, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 280, -1));
 
         bottomSave.setBackground(new java.awt.Color(0, 0, 0));
         bottomSave.setForeground(new java.awt.Color(255, 255, 255));
@@ -128,7 +128,7 @@ public class CheckIn extends javax.swing.JFrame {
 
         lblEmail.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 310, 20));
+        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 240, 20));
 
         lblNumber.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblNumber.setForeground(new java.awt.Color(255, 255, 255));
@@ -142,7 +142,7 @@ public class CheckIn extends javax.swing.JFrame {
                 lodgeActionPerformed(evt);
             }
         });
-        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, 40));
+        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, 40));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 600, 410));

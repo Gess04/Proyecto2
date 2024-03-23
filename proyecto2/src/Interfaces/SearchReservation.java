@@ -6,6 +6,8 @@ package Interfaces;
 
 import Functions.Functions;
 import Functions.Helpers;
+import static Interfaces.Welcome.reservations;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -79,7 +81,7 @@ public class SearchReservation extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Ingrese la cedula de la reservacion que desea buscar:");
+        jLabel1.setText("Ingrese la cédula de la reservación que desea buscar:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         searchByID.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -92,12 +94,12 @@ public class SearchReservation extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("encontrar una reservacion!");
+        jLabel2.setText("encontrar una reservación!");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("La cedula indica el parámetro de busqueda para");
+        jLabel4.setText("La cédula indica el parámetro de búsqueda para");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
@@ -120,7 +122,20 @@ public class SearchReservation extends javax.swing.JFrame {
     }//GEN-LAST:event_searchByIDActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        Helpers help = new Helpers();
+        String cedula = searchByID.getText();
+        int ci = help.ValidateID(cedula);
         
+        if(ci != -1){
+            if(reservations.searchNode2(reservations.getRoot(), ci) != null){
+                JOptionPane.showMessageDialog(null, reservations.searchNode2(reservations.getRoot(), ci).getReservation().toString());
+            }else{
+                JOptionPane.showMessageDialog(null, "La cedula " + ci + " no se ha encontrado");
+            }     
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "La cedula no es valida");
+        }        
     }//GEN-LAST:event_searchActionPerformed
 
     /**

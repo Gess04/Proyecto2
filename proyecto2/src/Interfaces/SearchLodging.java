@@ -7,6 +7,7 @@ package Interfaces;
 import Classes.Client;
 import javax.swing.JOptionPane;
 import EDD.HashTable;
+import static Interfaces.Welcome.states;
 
 /**
  *
@@ -128,7 +129,17 @@ public class SearchLodging extends javax.swing.JFrame {
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         String name = search_name.getText();
         String lastname = search_lastName.getText();
+        
+        
         Client client = new Client(name,lastname);
+        if(states.isInHashIndexN(client) != -1){
+            int num_hab = states.isInHashIndexN(client) + 1;
+            JOptionPane.showMessageDialog(null, "El cliente " + name + " "+ lastname + " esta hospedado en la habitacion " +  num_hab);
+        }else{
+            JOptionPane.showMessageDialog(null, "El cliente " + name + " "+ lastname + " no esta hospedado");
+        }
+        
+        
 //        JOptionPane.showMessageDialog(null, );
     }//GEN-LAST:event_searchActionPerformed
 
