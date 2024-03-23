@@ -17,16 +17,30 @@ public class History extends javax.swing.JFrame {
     /**
      * Creates new form History
      */
-    
-        public static Menu v1;
-        
-        public History(Menu v1) {
-            initComponents();
-            this.v1 = v1;
-            v1.setVisible(false);
-            this.setLocationRelativeTo(null);
-            this.setResizable(false); 
+    public static Menu v1;
+
+    public History(Menu v1) {
+        initComponents();
+        this.v1 = v1;
+        v1.setVisible(false);
+        this.setLocationRelativeTo(null);
+        bottomSave.setEnabled(false);
+    }
+
+    public void Validation() {
+
+        if (num_search.getText().isEmpty()) {
+            lblNumber.setText("*Campo Requerido");
+        } else {
+            lblNumber.setText("");
         }
+
+        if (num_search.getText().isEmpty()) {
+            bottomSave.setEnabled(false);
+        } else {
+            bottomSave.setEnabled(true);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,6 +57,8 @@ public class History extends javax.swing.JFrame {
         num_search = new javax.swing.JTextField();
         search_buttom = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        bottomSave = new javax.swing.JButton();
+        lblNumber = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,6 +87,11 @@ public class History extends javax.swing.JFrame {
                 num_searchActionPerformed(evt);
             }
         });
+        num_search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                num_searchKeyReleased(evt);
+            }
+        });
         jPanel1.add(num_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 390, 30));
 
         search_buttom.setBackground(new java.awt.Color(0, 0, 0));
@@ -87,6 +108,20 @@ public class History extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Introduzca el número de la habitación:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 330, -1));
+
+        bottomSave.setBackground(new java.awt.Color(0, 0, 0));
+        bottomSave.setForeground(new java.awt.Color(255, 255, 255));
+        bottomSave.setText("Guardar");
+        bottomSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bottomSaveActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 90, 40));
+
+        lblNumber.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
+        lblNumber.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(lblNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 280, 20));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -107,14 +142,18 @@ public class History extends javax.swing.JFrame {
         Helpers help = new Helpers();
         String num = num_search.getText();
         int roomNumber = help.ValidateNumbers(num);
-        
-        if(roomNumber != -1){
-            if(rooms.searchByKey(roomNumber).showHistory() != null){
-                JOptionPane.showMessageDialog(null,rooms.searchByKey(roomNumber).showHistory());
-            }else{
+
+        if (num_search.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
+        }
+
+        if (roomNumber != -1) {
+            if (rooms.searchByKey(roomNumber).showHistory() != null) {
+                JOptionPane.showMessageDialog(null, rooms.searchByKey(roomNumber).showHistory());
+            } else {
                 JOptionPane.showMessageDialog(null, "No ha pasado nadie por la habitación " + roomNumber);
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "El número de habitación no es válido");
         }
     }//GEN-LAST:event_search_buttomActionPerformed
@@ -122,6 +161,17 @@ public class History extends javax.swing.JFrame {
     private void num_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_searchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_num_searchActionPerformed
+
+    private void bottomSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottomSaveActionPerformed
+        this.setVisible(false);
+        Welcome b = new Welcome();
+        Menu window1 = new Menu(b);
+        window1.setVisible(true);
+    }//GEN-LAST:event_bottomSaveActionPerformed
+
+    private void num_searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_num_searchKeyReleased
+        Validation();
+    }//GEN-LAST:event_num_searchKeyReleased
 
     /**
      * @param args the command line arguments
@@ -162,9 +212,11 @@ public class History extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
+    private javax.swing.JButton bottomSave;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblNumber;
     private javax.swing.JTextField num_search;
     private javax.swing.JButton search_buttom;
     // End of variables declaration//GEN-END:variables

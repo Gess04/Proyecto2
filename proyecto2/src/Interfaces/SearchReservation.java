@@ -15,19 +15,33 @@ import javax.swing.JOptionPane;
  */
 public class SearchReservation extends javax.swing.JFrame {
 
-    
     /**
      * Creates new form FindReservation
      */
-    
-        public static Menu v1;
+    public static Menu v1;
 
-        public SearchReservation(Menu v1) {
-            initComponents();
-            this.v1 = v1;
-            v1.setVisible(false);
-            this.setLocationRelativeTo(null);
-            this.setResizable(false); 
+    public SearchReservation(Menu v1) {
+        initComponents();
+        this.v1 = v1;
+        v1.setVisible(false);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        bottomSave.setEnabled(false);
+    }
+
+    public void Validation() {
+
+        if (searchByID.getText().isEmpty()) {
+            lblId.setText("*Campo Requerido");
+        } else {
+            lblId.setText("");
+        }
+
+        if (searchByID.getText().isEmpty()) {
+            bottomSave.setEnabled(false);
+        } else {
+            bottomSave.setEnabled(true);
+        }
     }
 
     /**
@@ -45,6 +59,8 @@ public class SearchReservation extends javax.swing.JFrame {
         search = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         searchByID = new javax.swing.JTextField();
+        bottomSave = new javax.swing.JButton();
+        lblId = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,6 +106,20 @@ public class SearchReservation extends javax.swing.JFrame {
         });
         jPanel1.add(searchByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 310, 30));
 
+        bottomSave.setBackground(new java.awt.Color(0, 0, 0));
+        bottomSave.setForeground(new java.awt.Color(255, 255, 255));
+        bottomSave.setText("Guardar");
+        bottomSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bottomSaveActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 90, 40));
+
+        lblId.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
+        lblId.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 260, 20));
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 380));
 
@@ -113,18 +143,29 @@ public class SearchReservation extends javax.swing.JFrame {
         Helpers help = new Helpers();
         String cedula = searchByID.getText();
         int ci = help.ValidateID(cedula);
-        
-        if(ci != -1){
-            if(reservations.searchNode2(reservations.getRoot(), ci) != null){
+
+        if (searchByID.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
+        }
+
+        if (ci != -1) {
+            if (reservations.searchNode2(reservations.getRoot(), ci) != null) {
                 JOptionPane.showMessageDialog(null, reservations.searchNode2(reservations.getRoot(), ci).getReservation().toString());
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "La cedula " + ci + " no se ha encontrado");
-            }     
-            
-        }else{
+            }
+
+        } else {
             JOptionPane.showMessageDialog(null, "La cedula no es valida");
-        }        
+        }
     }//GEN-LAST:event_searchActionPerformed
+
+    private void bottomSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottomSaveActionPerformed
+        this.setVisible(false);
+        Welcome b = new Welcome();
+        Menu window1 = new Menu(b);
+        window1.setVisible(true);
+    }//GEN-LAST:event_bottomSaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,9 +208,11 @@ public class SearchReservation extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
+    private javax.swing.JButton bottomSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblId;
     private javax.swing.JButton search;
     private javax.swing.JTextField searchByID;
     // End of variables declaration//GEN-END:variables
