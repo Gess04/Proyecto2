@@ -33,10 +33,18 @@ public class CheckOut extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
+        id_checkOUT = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        searchID = new javax.swing.JButton();
         background = new javax.swing.JLabel();
+
+        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Ingrese la cédula del huesped:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -52,12 +60,28 @@ public class CheckOut extends javax.swing.JFrame {
             }
         });
         jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 90, 40));
+        jPanel1.add(id_checkOUT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 310, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Check Out");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 30));
+
+        jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Ingrese la cédula del huesped:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        searchID.setBackground(new java.awt.Color(0, 0, 0));
+        searchID.setForeground(new java.awt.Color(255, 255, 255));
+        searchID.setText("Buscar");
+        searchID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchIDActionPerformed(evt);
+            }
+        });
+        jPanel1.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 90, 30));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -73,6 +97,10 @@ public class CheckOut extends javax.swing.JFrame {
         Menu window1 = new Menu(b);
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
+
+    private void searchIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchIDActionPerformed
+        
+    }//GEN-LAST:event_searchIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,7 +141,11 @@ public class CheckOut extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
+    private javax.swing.JTextField id_checkOUT;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton searchID;
     // End of variables declaration//GEN-END:variables
 }
