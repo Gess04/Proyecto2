@@ -79,6 +79,7 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel3.setText("Check In");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
 
+        input_ci.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         input_ci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_ciActionPerformed(evt);

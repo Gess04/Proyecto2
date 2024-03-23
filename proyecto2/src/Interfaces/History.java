@@ -65,6 +65,7 @@ public class History extends javax.swing.JFrame {
         jLabel3.setText("Historial");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 30));
 
+        num_search.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         num_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num_searchActionPerformed(evt);
