@@ -127,7 +127,8 @@ public class History extends javax.swing.JFrame {
 
         if (num_search.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
-        }else if (roomNumber != -1) {
+        }
+        else if (roomNumber != -1) {
             if (rooms.searchByKey(roomNumber).showHistory() != null) {
                 JOptionPane.showMessageDialog(null, rooms.searchByKey(roomNumber).showHistory());
             } else {
@@ -139,11 +140,11 @@ public class History extends javax.swing.JFrame {
     }//GEN-LAST:event_search_buttomActionPerformed
 
     private void num_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_searchActionPerformed
-        Validation();
+      
     }//GEN-LAST:event_num_searchActionPerformed
 
     private void num_searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_num_searchKeyReleased
-        
+        Validation();
     }//GEN-LAST:event_num_searchKeyReleased
 
     /**
