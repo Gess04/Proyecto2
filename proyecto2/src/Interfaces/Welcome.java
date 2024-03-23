@@ -90,7 +90,7 @@ public class Welcome extends javax.swing.JFrame {
         
         
         
-       rooms.searchByKey(254).mostrar_historial();
+       rooms.searchByKey(254).showHistory();
 //        String chain = "";
 //
 //        Client client = new Client("Arielle", "Bragger");
