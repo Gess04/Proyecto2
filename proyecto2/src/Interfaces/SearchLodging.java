@@ -45,12 +45,11 @@ public class SearchLodging extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         search_name = new javax.swing.JTextField();
         search = new javax.swing.JButton();
-        Label_lastname = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         searchText1 = new javax.swing.JTextField();
         searchText2 = new javax.swing.JTextField();
         search_lastName = new javax.swing.JTextField();
-        Label_name = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,15 +85,15 @@ public class SearchLodging extends javax.swing.JFrame {
         });
         jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 110, 30));
 
-        Label_lastname.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
-        Label_lastname.setForeground(new java.awt.Color(255, 255, 255));
-        Label_lastname.setText("Indique el apellido del huésped ");
-        jPanel1.add(Label_lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 480, -1));
-
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Buscar hospedaje");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 250, 30));
+
+        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Indique la cédula del huésped del cual desea encontrar su reservacion: ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 480, -1));
 
         searchText1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         searchText1.addActionListener(new java.awt.event.ActionListener() {
@@ -117,15 +116,10 @@ public class SearchLodging extends javax.swing.JFrame {
                 search_lastNameActionPerformed(evt);
             }
         });
-        jPanel1.add(search_lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 290, 30));
-
-        Label_name.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
-        Label_name.setForeground(new java.awt.Color(255, 255, 255));
-        Label_name.setText("Indique el nombre del huésped ");
-        jPanel1.add(Label_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 480, -1));
+        jPanel1.add(search_lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 290, 30));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 370));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 370));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 490, 370));
 
@@ -139,7 +133,8 @@ public class SearchLodging extends javax.swing.JFrame {
         
         Client client = new Client(name,lastname);
         if(states.isInHashIndexN(client) != -1){
-            JOptionPane.showMessageDialog(null, "El cliente " + name + " "+ lastname + " esta hospedado en la habitacion " + states.isInHashIndexN(client));
+            int num_hab = states.isInHashIndexN(client) + 1;
+            JOptionPane.showMessageDialog(null, "El cliente " + name + " "+ lastname + " esta hospedado en la habitacion " +  num_hab);
         }else{
             JOptionPane.showMessageDialog(null, "El cliente " + name + " "+ lastname + " no esta hospedado");
         }
@@ -210,10 +205,9 @@ public class SearchLodging extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Label_lastname;
-    private javax.swing.JLabel Label_name;
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton search;

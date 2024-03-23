@@ -24,7 +24,8 @@ public class Welcome extends javax.swing.JFrame {
     public static HashTable states = new HashTable();
     public static BST reservations = new BST();
     public static AVL rooms = new AVL();
-
+    public static List room_availables = new List();
+    
     public Welcome() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -37,9 +38,18 @@ public class Welcome extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         next = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,10 +57,15 @@ public class Welcome extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("No huyas cobarde!");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jLabel1.setText("Christian Rodríguez");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 140, -1));
+
+        jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("En el programa encontrarás varias");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 290, -1));
 
         next.setBackground(new java.awt.Color(0, 0, 0));
         next.setForeground(new java.awt.Color(255, 255, 255));
@@ -62,15 +77,55 @@ public class Welcome extends javax.swing.JFrame {
         });
         jPanel1.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 110, 50));
 
-        jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Integrantes:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Bienvenido al hotel!");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 270, 30));
+
+        jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("funcionalidades como por ejemplo:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 290, -1));
+
+        jLabel6.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("- Check In");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 90, -1));
+
+        jLabel7.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("- Check Out");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 110, -1));
+
+        jLabel8.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("- Buscar Hospedaje");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 180, -1));
+
+        jLabel9.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("- Buscar Reservación");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 180, -1));
+
+        jLabel10.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("- Historial de habitaciones");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 220, -1));
+
+        jLabel11.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Tomás Araujo");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 100, -1));
+
+        jLabel12.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Gabriel Flores");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 100, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 420, 330));
@@ -81,23 +136,21 @@ public class Welcome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        
         FileCSV file = new FileCSV();
         file.Read_state(states);
         file.Read_bookings(reservations);
         file.Read_rooms(rooms);
         file.Read_history(rooms);
-        //rooms.inOrden();
         
-        
-        
-       rooms.searchByKey(254).showHistory();
-//        String chain = "";
-//
-//        Client client = new Client("Arielle", "Bragger");
-//        System.out.println(states.isInHashIndexN(client));
+        states.Availables(room_availables);
+        for (int i = 0; i < room_availables.getSize(); i++) {
+            int num_hab = (int) room_availables.getValor(i);
+            num_hab ++;
+            rooms.searchByKey(num_hab).setAvailable(true);
+        }
 
         JOptionPane.showMessageDialog(null, "Datos Cargados.");
-//        System.out.println(reservations.preOrder2(reservations.getRoot(),chain));
         this.setVisible(false);
         Welcome b = new Welcome();
         Menu window1 = new Menu(b);
@@ -143,8 +196,17 @@ public class Welcome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton next;
     // End of variables declaration//GEN-END:variables
