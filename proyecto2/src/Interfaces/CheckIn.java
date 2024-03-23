@@ -58,9 +58,11 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         input_ci = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        bottomSave = new javax.swing.JButton();
+        lblLastName = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
         lodge = new javax.swing.JButton();
+        bottomSave = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,6 +85,7 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel3.setText("Check In");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
 
+        input_ci.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         input_ci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_ciActionPerformed(evt);
@@ -93,26 +96,24 @@ public class CheckIn extends javax.swing.JFrame {
                 input_ciKeyReleased(evt);
             }
         });
-        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 280, -1));
+        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 370, 30));
 
         jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Introduzca la cédula del huésped:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 280, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 300, -1));
 
-        bottomSave.setBackground(new java.awt.Color(0, 0, 0));
-        bottomSave.setForeground(new java.awt.Color(255, 255, 255));
-        bottomSave.setText("Guardar");
-        bottomSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bottomSaveActionPerformed(evt);
-            }
-        });
-        jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 90, 40));
+        lblLastName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
+        lblLastName.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 290, 20));
 
         lblId.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 260, 20));
+        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 300, 20));
+
+        lblEmail.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 240, 20));
 
         lodge.setBackground(new java.awt.Color(0, 0, 0));
         lodge.setForeground(new java.awt.Color(255, 255, 255));
@@ -122,10 +123,20 @@ public class CheckIn extends javax.swing.JFrame {
                 lodgeActionPerformed(evt);
             }
         });
-        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, -1, 40));
+        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, 40));
+
+        bottomSave.setBackground(new java.awt.Color(0, 0, 0));
+        bottomSave.setForeground(new java.awt.Color(255, 255, 255));
+        bottomSave.setText("Guardar");
+        bottomSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bottomSaveActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 90, 40));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 490, 420));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 600, 410));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
 
@@ -143,14 +154,6 @@ public class CheckIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_input_ciActionPerformed
 
-    private void bottomSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottomSaveActionPerformed
-        JOptionPane.showMessageDialog(null, "Huésped guardado exitosamente!");
-        this.setVisible(false);
-        Welcome b = new Welcome();
-        Menu window1 = new Menu(b);
-        window1.setVisible(true);
-    }//GEN-LAST:event_bottomSaveActionPerformed
-
     private void input_ciKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_ciKeyReleased
         Validation();
     }//GEN-LAST:event_input_ciKeyReleased
@@ -160,19 +163,19 @@ public class CheckIn extends javax.swing.JFrame {
         String id = input_ci.getText();
         int ci = help.ValidateID(id);
         List habs_disp = new List();
-        
+
         if (input_ci.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");   
+            JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
         }
-        
+
         if (ci != -1) {
             if (reservations.searchNode2(reservations.getRoot(), ci) != null) {
                 Reservation reservation = reservations.searchNode2(reservations.getRoot(), ci).getReservation();
 
                 for (int i = 0; i < room_availables.getSize(); i++) {
                     int num_hab = (int) room_availables.getValor(i) + 1;
-                    
-                    if(rooms.searchByKey(num_hab).getRoomType().equalsIgnoreCase(reservation.getRoomType())){
+
+                    if (rooms.searchByKey(num_hab).getRoomType().equalsIgnoreCase(reservation.getRoomType())) {
                         habs_disp.addEnd(num_hab);
                     }
                 }
@@ -190,11 +193,11 @@ public class CheckIn extends javax.swing.JFrame {
                             states.Availables(room_availables);
                             reservations.deleteByClientId(ci);
                             JOptionPane.showMessageDialog(null, "El cliente se ha hospedado en la habitacion " + num_hab);
-                            count ++;
+                            count++;
                             break;
                         }
                     }
-                    if(count == 0){ 
+                    if (count == 0) {
                         JOptionPane.showMessageDialog(null, "No hay habitación del tipo deseado disponible");
                     }
                 }
@@ -205,6 +208,14 @@ public class CheckIn extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "La cédula no es valida");
         }
     }//GEN-LAST:event_lodgeActionPerformed
+
+    private void bottomSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottomSaveActionPerformed
+        JOptionPane.showMessageDialog(null, "Huésped guardado exitosamente!");
+        this.setVisible(false);
+        Welcome b = new Welcome();
+        Menu window1 = new Menu(b);
+        window1.setVisible(true);
+    }//GEN-LAST:event_bottomSaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,7 +261,9 @@ public class CheckIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblLastName;
     private javax.swing.JButton lodge;
     // End of variables declaration//GEN-END:variables
 }

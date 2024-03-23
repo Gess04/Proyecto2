@@ -61,27 +61,24 @@ public class SearchLodging extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Label_name = new javax.swing.JLabel();
         back = new javax.swing.JButton();
         search_name = new javax.swing.JTextField();
         search = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        searchText1 = new javax.swing.JTextField();
+        searchText2 = new javax.swing.JTextField();
         search_lastName = new javax.swing.JTextField();
-        Label_lastname = new javax.swing.JLabel();
-        lblLastName = new javax.swing.JLabel();
-        lblName = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         bottomSave = new javax.swing.JButton();
+        lblName = new javax.swing.JLabel();
+        lblLastName = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Label_name.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
-        Label_name.setForeground(new java.awt.Color(255, 255, 255));
-        Label_name.setText("Indique el nombre del huésped:");
-        jPanel1.add(Label_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 230, -1));
 
         back.setBackground(new java.awt.Color(0, 0, 0));
         back.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,7 +101,7 @@ public class SearchLodging extends javax.swing.JFrame {
                 search_nameKeyReleased(evt);
             }
         });
-        jPanel1.add(search_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 290, 30));
+        jPanel1.add(search_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
 
         search.setBackground(new java.awt.Color(0, 0, 0));
         search.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,8 +116,30 @@ public class SearchLodging extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Buscar hospedaje");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 250, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 300, 30));
 
+        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Indique el apellido del huesped:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 250, -1));
+
+        searchText1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        searchText1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchText1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(searchText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
+
+        searchText2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        searchText2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchText2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(searchText2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
+
+        search_lastName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search_lastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 search_lastNameActionPerformed(evt);
@@ -131,20 +150,12 @@ public class SearchLodging extends javax.swing.JFrame {
                 search_lastNameKeyReleased(evt);
             }
         });
-        jPanel1.add(search_lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 290, 30));
+        jPanel1.add(search_lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 290, 30));
 
-        Label_lastname.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
-        Label_lastname.setForeground(new java.awt.Color(255, 255, 255));
-        Label_lastname.setText("Indique el apellido del huésped:");
-        jPanel1.add(Label_lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 210, -1));
-
-        lblLastName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
-        lblLastName.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 260, 20));
-
-        lblName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
-        lblName.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 260, 20));
+        jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Indique el nombre del huesped:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 250, -1));
 
         bottomSave.setBackground(new java.awt.Color(0, 0, 0));
         bottomSave.setForeground(new java.awt.Color(255, 255, 255));
@@ -155,6 +166,14 @@ public class SearchLodging extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 90, 40));
+
+        lblName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 260, 20));
+
+        lblLastName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
+        lblLastName.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 260, 20));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 370));
@@ -213,6 +232,14 @@ public class SearchLodging extends javax.swing.JFrame {
         Validation();
     }//GEN-LAST:event_search_lastNameKeyReleased
 
+    private void searchText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchText1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchText1ActionPerformed
+
+    private void searchText2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchText2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchText2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -252,16 +279,18 @@ public class SearchLodging extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Label_lastname;
-    private javax.swing.JLabel Label_name;
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
     private javax.swing.JButton bottomSave;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblLastName;
     private javax.swing.JLabel lblName;
     private javax.swing.JButton search;
+    private javax.swing.JTextField searchText1;
+    private javax.swing.JTextField searchText2;
     private javax.swing.JTextField search_lastName;
     private javax.swing.JTextField search_name;
     // End of variables declaration//GEN-END:variables
