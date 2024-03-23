@@ -186,13 +186,10 @@ public class SearchLodging extends javax.swing.JFrame {
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         String name = search_name.getText();
         String lastname = search_lastName.getText();
-
+        Client client = new Client(name, lastname);
         if (search_lastName.getText().isEmpty() || search_name.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debes rellenar las casillas!");
-        }
-
-        Client client = new Client(name, lastname);
-        if (states.isInHashIndexN(client) != -1) {
+        }else if  (states.isInHashIndexN(client) != -1) {
             int num_hab = states.isInHashIndexN(client) + 1;
             JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " esta hospedado en la habitacion " + num_hab);
         } else {
