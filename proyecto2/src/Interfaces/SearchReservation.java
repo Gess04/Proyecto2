@@ -104,6 +104,11 @@ public class SearchReservation extends javax.swing.JFrame {
                 searchByIDActionPerformed(evt);
             }
         });
+        searchByID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchByIDKeyReleased(evt);
+            }
+        });
         jPanel1.add(searchByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 310, 30));
 
         bottomSave.setBackground(new java.awt.Color(0, 0, 0));
@@ -166,6 +171,10 @@ public class SearchReservation extends javax.swing.JFrame {
         Menu window1 = new Menu(b);
         window1.setVisible(true);
     }//GEN-LAST:event_bottomSaveActionPerformed
+
+    private void searchByIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchByIDKeyReleased
+        Validation();
+    }//GEN-LAST:event_searchByIDKeyReleased
 
     /**
      * @param args the command line arguments

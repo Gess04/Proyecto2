@@ -58,9 +58,7 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         input_ci = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        lblLastName = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
-        lblEmail = new javax.swing.JLabel();
         lodge = new javax.swing.JButton();
         bottomSave = new javax.swing.JButton();
         background = new javax.swing.JLabel();
@@ -103,17 +101,9 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel5.setText("Introduzca la cédula del huésped:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 300, -1));
 
-        lblLastName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
-        lblLastName.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 290, 20));
-
         lblId.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 300, 20));
-
-        lblEmail.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
-        lblEmail.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 240, 20));
+        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 300, 20));
 
         lodge.setBackground(new java.awt.Color(0, 0, 0));
         lodge.setForeground(new java.awt.Color(255, 255, 255));
@@ -261,9 +251,7 @@ public class CheckIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblId;
-    private javax.swing.JLabel lblLastName;
     private javax.swing.JButton lodge;
     // End of variables declaration//GEN-END:variables
 }
