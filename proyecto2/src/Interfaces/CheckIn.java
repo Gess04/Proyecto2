@@ -63,7 +63,6 @@ public class CheckIn extends javax.swing.JFrame {
         lblLastName = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
-        lblNumber = new javax.swing.JLabel();
         lodge = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
@@ -97,12 +96,12 @@ public class CheckIn extends javax.swing.JFrame {
                 input_ciKeyReleased(evt);
             }
         });
-        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 280, -1));
+        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 280, -1));
 
         jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Introduzca la cédula del huésped:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 280, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 300, -1));
 
         bottomSave.setBackground(new java.awt.Color(0, 0, 0));
         bottomSave.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,10 +129,6 @@ public class CheckIn extends javax.swing.JFrame {
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 240, 20));
 
-        lblNumber.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
-        lblNumber.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 300, 20));
-
         lodge.setBackground(new java.awt.Color(0, 0, 0));
         lodge.setForeground(new java.awt.Color(255, 255, 255));
         lodge.setText("Hospedar");
@@ -142,7 +137,7 @@ public class CheckIn extends javax.swing.JFrame {
                 lodgeActionPerformed(evt);
             }
         });
-        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, 40));
+        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, -1, 40));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 600, 410));
@@ -270,7 +265,6 @@ public class CheckIn extends javax.swing.JFrame {
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblLastName;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblNumber;
     private javax.swing.JButton lodge;
     // End of variables declaration//GEN-END:variables
 }
