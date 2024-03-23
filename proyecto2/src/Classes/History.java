@@ -21,7 +21,7 @@ public class History {
     
     public History(Client client, String dateOut) {
         this.client = client;
-        this.dateIn = null;
+        this.dateIn = "NO HAY FECHA DE LLEGADA";
         this.dateOut = dateOut;
     }
 
@@ -69,7 +69,7 @@ public class History {
 
     @Override
     public String toString() {
-        return "History{" + "client=" + client.getId() + ", dateIn=" + dateIn + ", dateOut=" + dateOut + '}';
+        return "ID Cliente =" + client.getId() + ", Fecha de llegada =" + dateIn + ", Fecha de salida =" + dateOut;
     }
     
     

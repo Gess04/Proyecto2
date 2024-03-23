@@ -31,7 +31,6 @@ public class CheckIn extends javax.swing.JFrame {
         v1.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        bottomSave.setEnabled(false);
     }
 
     public void Validation() {
@@ -40,12 +39,6 @@ public class CheckIn extends javax.swing.JFrame {
             lblId.setText("*Campo Requerido");
         } else {
             lblId.setText("");
-        }
-
-        if (input_ci.getText().isEmpty()) {
-            bottomSave.setEnabled(false);
-        } else {
-            bottomSave.setEnabled(true);
         }
     }
 
@@ -60,7 +53,6 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
         lodge = new javax.swing.JButton();
-        bottomSave = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -114,16 +106,6 @@ public class CheckIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, 40));
-
-        bottomSave.setBackground(new java.awt.Color(0, 0, 0));
-        bottomSave.setForeground(new java.awt.Color(255, 255, 255));
-        bottomSave.setText("Guardar");
-        bottomSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bottomSaveActionPerformed(evt);
-            }
-        });
-        jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 90, 40));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 600, 410));
@@ -199,14 +181,6 @@ public class CheckIn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_lodgeActionPerformed
 
-    private void bottomSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottomSaveActionPerformed
-        JOptionPane.showMessageDialog(null, "Huésped guardado exitosamente!");
-        this.setVisible(false);
-        Welcome b = new Welcome();
-        Menu window1 = new Menu(b);
-        window1.setVisible(true);
-    }//GEN-LAST:event_bottomSaveActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -246,7 +220,6 @@ public class CheckIn extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
-    private javax.swing.JButton bottomSave;
     private javax.swing.JTextField input_ci;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
