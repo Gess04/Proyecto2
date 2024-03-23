@@ -112,6 +112,7 @@ public class SearchLodging extends javax.swing.JFrame {
         });
         jPanel1.add(searchText2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
 
+        search_lastName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search_lastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 search_lastNameActionPerformed(evt);
