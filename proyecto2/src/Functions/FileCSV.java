@@ -118,7 +118,7 @@ public class FileCSV {
     public void Read_state(HashTable table){
         String line;
         String expresion_txt = "";
-        String path = "test//state.csv";
+        String path = "test//state2.csv";
         File file = new File(path);
         try{
             if(!file.exists()){
