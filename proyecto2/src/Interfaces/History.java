@@ -123,26 +123,35 @@ public class History extends javax.swing.JFrame {
     private void search_buttomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_buttomActionPerformed
         Helpers help = new Helpers();
         String num = num_search.getText();
-        int roomNumber = help.ValidateNumbers(num);
 
-        if (!num_search.getText().isEmpty()) {
-            if (roomNumber != -1) {
-                if (rooms.searchByKey(roomNumber).showHistory() != null) {
-                    JOptionPane.showMessageDialog(null, rooms.searchByKey(roomNumber).showHistory());
+
+        if (!num.isEmpty()) {
+            try {
+                int num1 = Integer.parseInt(num);
+
+                int roomNumber = help.ValidateNumbers(num);
+
+                if (num1 >= 301) {
+                    JOptionPane.showMessageDialog(null, "El número de habitación debe ser menor a 300!");
+                } else if (roomNumber != -1) {
+                    if (rooms.searchByKey(roomNumber).showHistory() != null) {
+                        JOptionPane.showMessageDialog(null, rooms.searchByKey(roomNumber).showHistory());
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No ha pasado nadie por la habitación " + roomNumber);
+                    }
                 } else {
-                    JOptionPane.showMessageDialog(null, "No ha pasado nadie por la habitación " + roomNumber);
+                    JOptionPane.showMessageDialog(null, "El número de habitación no es válido");
                 }
-            } else  {
-                JOptionPane.showMessageDialog(null, "El número de habitación no es válido");
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Debes ingresar un número válido para la habitación");
             }
-            
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
         }
     }//GEN-LAST:event_search_buttomActionPerformed
 
     private void num_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_searchActionPerformed
-      
+
     }//GEN-LAST:event_num_searchActionPerformed
 
     private void num_searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_num_searchKeyReleased

@@ -3,11 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaces;
+
 import Classes.Client;
 import static Interfaces.Welcome.room_availables;
 import static Interfaces.Welcome.rooms;
 import static Interfaces.Welcome.states;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author Christian
@@ -17,15 +19,28 @@ public class CheckOut extends javax.swing.JFrame {
     /**
      * Creates new form CheckOut
      */
-    
     public static Menu v1;
-    
+
     public CheckOut(Menu v1) {
         initComponents();
         this.v1 = v1;
         v1.setVisible(false);
         this.setLocationRelativeTo(null);
-        this.setResizable(false);        
+        this.setResizable(false);
+    }
+
+    public void Validation() {
+
+        if (search_lastname.getText().isEmpty()) {
+            lblLastName.setText("*Campo Requerido");
+        } else {
+            lblLastName.setText("");
+        }
+        if (search_name.getText().isEmpty()) {
+            lblName.setText("*Campo Requerido");
+        } else {
+            lblName.setText("");
+        }
     }
 
     /**
@@ -46,6 +61,8 @@ public class CheckOut extends javax.swing.JFrame {
         search = new javax.swing.JButton();
         search_lastname = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblLastName = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
@@ -72,6 +89,11 @@ public class CheckOut extends javax.swing.JFrame {
                 search_nameActionPerformed(evt);
             }
         });
+        search_name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                search_nameKeyReleased(evt);
+            }
+        });
         jPanel1.add(search_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 310, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -83,7 +105,7 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ingrese el apellido del huesped:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         search.setBackground(new java.awt.Color(0, 0, 0));
         search.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,12 +122,25 @@ public class CheckOut extends javax.swing.JFrame {
                 search_lastnameActionPerformed(evt);
             }
         });
-        jPanel1.add(search_lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 310, 30));
+        search_lastname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                search_lastnameKeyReleased(evt);
+            }
+        });
+        jPanel1.add(search_lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 310, 30));
 
         jLabel4.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ingrese el nombre del huesped:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        lblName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 260, 20));
+
+        lblLastName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
+        lblLastName.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 260, 20));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -128,20 +163,20 @@ public class CheckOut extends javax.swing.JFrame {
         Client client = new Client(name, lastname);
         if (search_lastname.getText().isEmpty() || search_name.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debes rellenar las casillas!");
-        }else if  (states.isInHashIndexN(client) != -1) {
+        } else if (states.isInHashIndexN(client) != -1) {
             int num_hab = states.isInHashIndexN(client) + 1;
-            
+
             rooms.searchByKey(num_hab).setAvailable(true);
             rooms.searchByKey(num_hab).getHistory().addEnd(states.isInHashStatus(client));
-            
+
             states.deleteStatus(states.isInHashStatus(client));
-            
+
             room_availables.clear();
-            
+
             states.Availables(room_availables);
-            
+
             JOptionPane.showMessageDialog(null, "Haz salido del Hotel");
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " no esta hospedado");
         }
@@ -154,6 +189,14 @@ public class CheckOut extends javax.swing.JFrame {
     private void search_lastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_lastnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_search_lastnameActionPerformed
+
+    private void search_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_nameKeyReleased
+        Validation();
+    }//GEN-LAST:event_search_nameKeyReleased
+
+    private void search_lastnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_lastnameKeyReleased
+        Validation();
+    }//GEN-LAST:event_search_lastnameKeyReleased
 
     /**
      * @param args the command line arguments
@@ -199,6 +242,8 @@ public class CheckOut extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblName;
     private javax.swing.JButton search;
     private javax.swing.JTextField search_lastname;
     private javax.swing.JTextField search_name;
