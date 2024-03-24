@@ -125,17 +125,19 @@ public class History extends javax.swing.JFrame {
         String num = num_search.getText();
         int roomNumber = help.ValidateNumbers(num);
 
-        if (num_search.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
-        }
-        else if (roomNumber != -1) {
-            if (rooms.searchByKey(roomNumber).showHistory() != null) {
-                JOptionPane.showMessageDialog(null, rooms.searchByKey(roomNumber).showHistory());
-            } else {
-                JOptionPane.showMessageDialog(null, "No ha pasado nadie por la habitación " + roomNumber);
+        if (!num_search.getText().isEmpty()) {
+            if (roomNumber != -1) {
+                if (rooms.searchByKey(roomNumber).showHistory() != null) {
+                    JOptionPane.showMessageDialog(null, rooms.searchByKey(roomNumber).showHistory());
+                } else {
+                    JOptionPane.showMessageDialog(null, "No ha pasado nadie por la habitación " + roomNumber);
+                }
+            } else  {
+                JOptionPane.showMessageDialog(null, "El número de habitación no es válido");
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "El número de habitación no es válido");
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
         }
     }//GEN-LAST:event_search_buttomActionPerformed
 

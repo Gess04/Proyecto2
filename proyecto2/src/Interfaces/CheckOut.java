@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaces;
-
+import Classes.Client;
+import static Interfaces.Welcome.room_availables;
+import static Interfaces.Welcome.rooms;
+import static Interfaces.Welcome.states;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Christian
@@ -36,10 +40,12 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
-        id_checkOUT = new javax.swing.JTextField();
+        search_name = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        searchID = new javax.swing.JButton();
+        search = new javax.swing.JButton();
+        search_lastname = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
@@ -60,7 +66,13 @@ public class CheckOut extends javax.swing.JFrame {
             }
         });
         jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 90, 40));
-        jPanel1.add(id_checkOUT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 310, 30));
+
+        search_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_nameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(search_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 310, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
@@ -70,18 +82,30 @@ public class CheckOut extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Ingrese la cédula del huesped:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        jLabel2.setText("Ingrese el apellido del huesped:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
 
-        searchID.setBackground(new java.awt.Color(0, 0, 0));
-        searchID.setForeground(new java.awt.Color(255, 255, 255));
-        searchID.setText("Buscar");
-        searchID.addActionListener(new java.awt.event.ActionListener() {
+        search.setBackground(new java.awt.Color(0, 0, 0));
+        search.setForeground(new java.awt.Color(255, 255, 255));
+        search.setText("Buscar");
+        search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchIDActionPerformed(evt);
+                searchActionPerformed(evt);
             }
         });
-        jPanel1.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 90, 30));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 90, 30));
+
+        search_lastname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_lastnameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(search_lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 310, 30));
+
+        jLabel4.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Ingrese el nombre del huesped:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -98,9 +122,38 @@ public class CheckOut extends javax.swing.JFrame {
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
-    private void searchIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchIDActionPerformed
-        
-    }//GEN-LAST:event_searchIDActionPerformed
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        String name = search_name.getText();
+        String lastname = search_lastname.getText();
+        Client client = new Client(name, lastname);
+        if (search_lastname.getText().isEmpty() || search_name.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debes rellenar las casillas!");
+        }else if  (states.isInHashIndexN(client) != -1) {
+            int num_hab = states.isInHashIndexN(client) + 1;
+            
+            rooms.searchByKey(num_hab).setAvailable(true);
+            rooms.searchByKey(num_hab).getHistory().addEnd(states.isInHashStatus(client));
+            
+            states.deleteStatus(states.isInHashStatus(client));
+            
+            room_availables.clear();
+            
+            states.Availables(room_availables);
+            
+            JOptionPane.showMessageDialog(null, "Haz salido del Hotel");
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " no esta hospedado");
+        }
+    }//GEN-LAST:event_searchActionPerformed
+
+    private void search_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_nameActionPerformed
+
+    private void search_lastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_lastnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_lastnameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,11 +194,13 @@ public class CheckOut extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
-    private javax.swing.JTextField id_checkOUT;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton searchID;
+    private javax.swing.JButton search;
+    private javax.swing.JTextField search_lastname;
+    private javax.swing.JTextField search_name;
     // End of variables declaration//GEN-END:variables
 }

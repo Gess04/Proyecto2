@@ -57,6 +57,29 @@ public class HashTable {
         }
     }
     
+    public Status isInHashStatus(Client client){
+        for (int i = 0; i < this.getStatus().length; i++) {
+            if(getStatus()[i] != null){
+                if(getStatus()[i].getClient().getName().equalsIgnoreCase(client.getName())&& getStatus()[i].getClient().getLastname().equalsIgnoreCase(client.getLastname())){
+                    return getStatus()[i];
+                }
+            }
+        }
+        return null;
+    }
+    
+    public boolean deleteStatus(Status status){
+        int index = isInHashIndex(status);
+        if(index != -1){
+            getStatus()[index] = null;
+            System.out.println("Estado eliminado exitosamente");
+            return true;
+        }else{
+            System.out.println("Estado no encontrado");
+        }
+        return false;
+    }
+    
     public boolean isInHash(Status status){
         boolean aux = false;
         for (int i = 0; i < this.getStatus().length; i++) {
