@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class Welcome extends javax.swing.JFrame {
 
     /**
-     * Creates new form Welcome
+     * Se crea la ventana Welcome y se llama a la base de datos de HashTable, BST, AVL y List
      */
     public static HashTable states = new HashTable();
     public static BST reservations = new BST();

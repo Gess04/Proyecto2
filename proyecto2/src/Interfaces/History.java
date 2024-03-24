@@ -143,7 +143,7 @@ public class History extends javax.swing.JFrame {
         String num = num_search.getText();
         int roomNumber = help.ValidateNumbers(num);
 
-        if (num_search.getText().isEmpty()) {
+        if (num.isEmpty() || num == null || num.equals(" ")) {
             JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
         }
 
