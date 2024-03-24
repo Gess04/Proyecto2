@@ -26,8 +26,6 @@ public class SearchLodging extends javax.swing.JFrame {
         v1.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        bottomSave.setEnabled(false);
-
     }
 
     public void Validation() {
@@ -44,11 +42,6 @@ public class SearchLodging extends javax.swing.JFrame {
             lblName.setText("");
         }
 
-        if (search_name.getText().isEmpty() || search_lastName.getText().isEmpty()) {
-            bottomSave.setEnabled(false);
-        } else {
-            bottomSave.setEnabled(true);
-        }
     }
 
     /**
@@ -70,7 +63,6 @@ public class SearchLodging extends javax.swing.JFrame {
         searchText2 = new javax.swing.JTextField();
         search_lastName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        bottomSave = new javax.swing.JButton();
         lblName = new javax.swing.JLabel();
         lblLastName = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
@@ -157,16 +149,6 @@ public class SearchLodging extends javax.swing.JFrame {
         jLabel2.setText("Indique el nombre del huesped:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 250, -1));
 
-        bottomSave.setBackground(new java.awt.Color(0, 0, 0));
-        bottomSave.setForeground(new java.awt.Color(255, 255, 255));
-        bottomSave.setText("Guardar");
-        bottomSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bottomSaveActionPerformed(evt);
-            }
-        });
-        jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 90, 40));
-
         lblName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 260, 20));
@@ -189,14 +171,12 @@ public class SearchLodging extends javax.swing.JFrame {
         Client client = new Client(name, lastname);
         if (search_lastName.getText().isEmpty() || search_name.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debes rellenar las casillas!");
-        }else if  (states.isInHashIndexN(client) != -1) {
+        } else if (states.isInHashIndexN(client) != -1) {
             int num_hab = states.isInHashIndexN(client) + 1;
-            JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " esta hospedado en la habitacion " + num_hab);
+            JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " está hospedado en la habitación." + num_hab);
         } else {
-            JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " no esta hospedado");
+            JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " no esta hospedado.");
         }
-
-//        JOptionPane.showMessageDialog(null, );
     }//GEN-LAST:event_searchActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -213,13 +193,6 @@ public class SearchLodging extends javax.swing.JFrame {
     private void search_lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_lastNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_search_lastNameActionPerformed
-
-    private void bottomSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottomSaveActionPerformed
-        this.setVisible(false);
-        Welcome b = new Welcome();
-        Menu window1 = new Menu(b);
-        window1.setVisible(true);
-    }//GEN-LAST:event_bottomSaveActionPerformed
 
     private void search_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_nameKeyReleased
         Validation();
@@ -278,7 +251,6 @@ public class SearchLodging extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
-    private javax.swing.JButton bottomSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
