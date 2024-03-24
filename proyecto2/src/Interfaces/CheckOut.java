@@ -4,8 +4,6 @@
  */
 package Interfaces;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Christian
@@ -25,15 +23,6 @@ public class CheckOut extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);        
     }
-    
-        public void Validation() {
-
-        if (id_checkOUT.getText().isEmpty()) {
-            lblId.setText("*Campo Requerido");
-        } else {
-            lblId.setText("");
-        }
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,12 +36,6 @@ public class CheckOut extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-<<<<<<< Updated upstream
-=======
-        jLabel2 = new javax.swing.JLabel();
-        searchID = new javax.swing.JButton();
-        lblId = new javax.swing.JLabel();
->>>>>>> Stashed changes
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,21 +52,6 @@ public class CheckOut extends javax.swing.JFrame {
             }
         });
         jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 90, 40));
-<<<<<<< Updated upstream
-=======
-
-        id_checkOUT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                id_checkOUTActionPerformed(evt);
-            }
-        });
-        id_checkOUT.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                id_checkOUTKeyReleased(evt);
-            }
-        });
-        jPanel1.add(id_checkOUT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 310, 30));
->>>>>>> Stashed changes
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
@@ -91,28 +59,6 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel3.setText("Check Out");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 30));
 
-<<<<<<< Updated upstream
-=======
-        jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Ingrese la cédula del huesped:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-
-        searchID.setBackground(new java.awt.Color(0, 0, 0));
-        searchID.setForeground(new java.awt.Color(255, 255, 255));
-        searchID.setText("Buscar");
-        searchID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchIDActionPerformed(evt);
-            }
-        });
-        jPanel1.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 90, 30));
-
-        lblId.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
-        lblId.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 300, 20));
-
->>>>>>> Stashed changes
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -128,23 +74,6 @@ public class CheckOut extends javax.swing.JFrame {
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
-<<<<<<< Updated upstream
-=======
-    private void searchIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchIDActionPerformed
-        
-        if (id_checkOUT.getText().isEmpty()) 
-            JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
-    }//GEN-LAST:event_searchIDActionPerformed
-
-    private void id_checkOUTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_checkOUTActionPerformed
-        
-    }//GEN-LAST:event_id_checkOUTActionPerformed
-
-    private void id_checkOUTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_id_checkOUTKeyReleased
-        Validation();
-    }//GEN-LAST:event_id_checkOUTKeyReleased
-
->>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */
@@ -186,10 +115,5 @@ public class CheckOut extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-<<<<<<< Updated upstream
-=======
-    private javax.swing.JLabel lblId;
-    private javax.swing.JButton searchID;
->>>>>>> Stashed changes
     // End of variables declaration//GEN-END:variables
 }
