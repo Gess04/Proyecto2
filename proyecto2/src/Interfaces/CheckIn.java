@@ -15,16 +15,25 @@ import static Interfaces.Welcome.states;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * La clase CheckIn representa la ventana de registro de ingreso de huéspedes.
+ * 
  * @author Christian
  */
 public class CheckIn extends javax.swing.JFrame {
 
     /**
-     * Creates new form CheckIn
+     * Instancia de la clase Menu asociada a esta ventana de registro de
+     * ingreso.
      */
     public static Menu v1;
 
+    /**
+     * Constructor de la clase CheckIn. Inicializa la interfaz de usuario y
+     * oculta la ventana de menú asociada.
+     *
+     * @param v1 Instancia de la clase Menu que se asocia a esta ventana de
+     * registro de ingreso.
+     */
     public CheckIn(Menu v1) {
         initComponents();
         this.v1 = v1;
@@ -33,6 +42,10 @@ public class CheckIn extends javax.swing.JFrame {
         this.setResizable(false);
     }
 
+    /**
+     * Método para realizar la validación del campo de entrada del ID del
+     * cliente. Muestra un mensaje de error si el campo está vacío.
+     */
     public void Validation() {
 
         if (input_ci.getText().isEmpty()) {
@@ -76,11 +89,6 @@ public class CheckIn extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
 
         input_ci.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        input_ci.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_ciActionPerformed(evt);
-            }
-        });
         input_ci.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 input_ciKeyReleased(evt);
@@ -115,6 +123,13 @@ public class CheckIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Método invocado al hacer clic en el botón "Volver". Oculta la ventana
+     * actual de registro de ingreso y muestra la ventana de menú.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Volver".
+     */
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.setVisible(false);
         Welcome b = new Welcome();
@@ -122,14 +137,24 @@ public class CheckIn extends javax.swing.JFrame {
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
-    private void input_ciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_ciActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_input_ciActionPerformed
-
+    /**
+     * Método invocado al soltar una tecla en el campo de entrada del ID del
+     * cliente. Realiza la validación del campo de entrada del ID del cliente.
+     *
+     * @param evt El evento de teclado generado al soltar una tecla en el campo
+     * de entrada del ID del cliente.
+     */
     private void input_ciKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_ciKeyReleased
         Validation();
     }//GEN-LAST:event_input_ciKeyReleased
 
+    /**
+     * Método invocado al hacer clic en el botón "Hospedar". Realiza el proceso
+     * de hospedaje de un cliente.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Hospedar".
+     */
     private void lodgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lodgeActionPerformed
         Helpers help = new Helpers();
         String id = input_ci.getText();

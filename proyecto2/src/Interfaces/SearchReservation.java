@@ -10,16 +10,26 @@ import static Interfaces.Welcome.reservations;
 import javax.swing.JOptionPane;
 
 /**
+ * La clase SearchReservation representa la ventana de búsqueda de reservas de
+ * clientes. Permite buscar una reserva por número de identificación (cédula).
  *
  * @author Christian
  */
 public class SearchReservation extends javax.swing.JFrame {
 
     /**
-     * Creates new form FindReservation
+     * Instancia de la clase Menu asociada a esta ventana de búsqueda de
+     * reservas.
      */
     public static Menu v1;
 
+    /**
+     * Constructor de la clase SearchReservation. Inicializa la interfaz de
+     * usuario y oculta la ventana de menú asociada.
+     *
+     * @param v1 Instancia de la clase Menu que se asocia a esta ventana de
+     * búsqueda de reservas.
+     */
     public SearchReservation(Menu v1) {
         initComponents();
         this.v1 = v1;
@@ -29,6 +39,11 @@ public class SearchReservation extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Método para realizar la validación del campo de entrada del número de
+     * identificación (cédula). Muestra un mensaje de error si el campo está
+     * vacío.
+     */
     public void Validation() {
 
         if (searchByID.getText().isEmpty()) {
@@ -93,11 +108,6 @@ public class SearchReservation extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         searchByID.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        searchByID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchByIDActionPerformed(evt);
-            }
-        });
         searchByID.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 searchByIDKeyReleased(evt);
@@ -117,6 +127,13 @@ public class SearchReservation extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Método invocado al hacer clic en el botón "Volver". Oculta la ventana
+     * actual de búsqueda de reservas y muestra la ventana de menú.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Volver".
+     */
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.setVisible(false);
         Welcome b = new Welcome();
@@ -124,10 +141,13 @@ public class SearchReservation extends javax.swing.JFrame {
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
-    private void searchByIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchByIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchByIDActionPerformed
-
+    /**
+     * Método invocado al hacer clic en el botón "Buscar". Realiza el proceso de
+     * búsqueda de una reserva por número de identificación (cedula).
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Buscar".
+     */
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         Helpers help = new Helpers();
         String cedula = searchByID.getText();
@@ -153,6 +173,14 @@ public class SearchReservation extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_searchActionPerformed
 
+    /**
+     * Método invocado al soltar una tecla en el campo de entrada del número de
+     * identificación (cedula). Realiza la validación del campo de entrada del
+     * número de identificación (cedula).
+     *
+     * @param evt El evento de teclado generado al soltar una tecla en el campo
+     * de entrada del número de identificación (cedula).
+     */
     private void searchByIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchByIDKeyReleased
         Validation();
     }//GEN-LAST:event_searchByIDKeyReleased

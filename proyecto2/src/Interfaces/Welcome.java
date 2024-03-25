@@ -13,19 +13,37 @@ import Functions.FileCSV;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * La clase Welcome representa la ventana de bienvenida de la aplicación. Esta
+ * ventana carga los datos iniciales necesarios desde archivos CSV.
+ * 
  * @author Christian
  */
 public class Welcome extends javax.swing.JFrame {
 
     /**
-     * Creates new form Welcome
+     * HashTable que almacena el estado actual de las habitaciones.
      */
     public static HashTable states = new HashTable();
+
+    /**
+     * BST que almacena las reservas de habitaciones.
+     */
     public static BST reservations = new BST();
+
+    /**
+     * AVL que almacena la información de las habitaciones.
+     */
     public static AVL rooms = new AVL();
+
+    /**
+     * Lista que contiene las habitaciones disponibles.
+     */
     public static List room_availables = new List();
-    
+
+    /**
+     * Constructor de la clase Welcome. Inicializa la interfaz de usuario y
+     * configura la posición y la capacidad de redimensionamiento de la ventana.
+     */
     public Welcome() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -75,24 +93,51 @@ public class Welcome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Método invocado al hacer clic en el botón "Siguiente". Lee los datos
+     * desde archivos CSV y los carga en las estructuras de datos
+     * correspondientes. Muestra un mensaje de confirmación cuando los datos se
+     * han cargado correctamente. Redirige a la siguiente ventana de la
+     * aplicación.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Siguiente".
+     */
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
-        
+        // Instancia de la clase FileCSV para leer datos desde archivos CSV
         FileCSV file = new FileCSV();
+
+        // Lee los estados de las habitaciones desde un archivo CSV y los carga en la HashTable 'states'
         file.Read_state(states);
+
+        // Lee las reservas de habitaciones desde un archivo CSV y las carga en el BST 'reservations'
         file.Read_bookings(reservations);
+
+        // Lee la información de las habitaciones desde un archivo CSV y las carga en el AVL 'rooms'
         file.Read_rooms(rooms);
+
+        // Lee el historial de ocupación de las habitaciones desde un archivo CSV y lo carga en el AVL 'rooms'
         file.Read_history(rooms);
-        
+
+        // Calcula las habitaciones disponibles y las almacena en la Lista 'room_availables'
         states.Availables(room_availables);
+        // Marca todas las habitaciones disponibles como disponibles en la estructura de datos AVL 'rooms'
         for (int i = 0; i < room_availables.getSize(); i++) {
             int num_hab = (int) room_availables.getValor(i);
-            num_hab ++;
+            num_hab++;
             rooms.searchByKey(num_hab).setAvailable(true);
         }
 
+        // Muestra un mensaje de confirmación indicando que los datos se han cargado correctamente
         JOptionPane.showMessageDialog(null, "Datos Cargados.");
+
+        // Cierra la ventana actual de bienvenida
         this.setVisible(false);
+
+        // Crea una nueva instancia de la clase Welcome y la asigna a 'b'
         Welcome b = new Welcome();
+
+        // Crea una instancia de la clase Menu con la ventana de bienvenida 'b' y la muestra
         Menu window1 = new Menu(b);
         window1.setVisible(true);
     }//GEN-LAST:event_nextActionPerformed

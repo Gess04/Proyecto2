@@ -12,16 +12,25 @@ import static Interfaces.Welcome.states;
 import javax.swing.JOptionPane;
 
 /**
+ * La clase CheckOut representa la ventana de salida de clientes del hotel.
+ * Permite realizar el proceso de salida de un cliente del hotel.
  *
  * @author Christian
  */
 public class CheckOut extends javax.swing.JFrame {
 
     /**
-     * Creates new form CheckOut
+     * Instancia de la clase Menu asociada a esta ventana de salida.
      */
     public static Menu v1;
 
+    /**
+     * Constructor de la clase CheckOut. Inicializa la interfaz de usuario y
+     * oculta la ventana de menú asociada.
+     *
+     * @param v1 Instancia de la clase Menu que se asocia a esta ventana de
+     * salida.
+     */
     public CheckOut(Menu v1) {
         initComponents();
         this.v1 = v1;
@@ -30,6 +39,10 @@ public class CheckOut extends javax.swing.JFrame {
         this.setResizable(false);
     }
 
+    /**
+     * Método para realizar la validación de los campos de entrada del nombre y
+     * apellido. Muestra un mensaje de error si alguno de los campos está vacío.
+     */
     public void Validation() {
 
         if (search_lastname.getText().isEmpty()) {
@@ -44,7 +57,13 @@ public class CheckOut extends javax.swing.JFrame {
         }
     }
 
-    private boolean validateNumbers(String num){
+    /**
+     * Método para validar si una cadena contiene solo números.
+     *
+     * @param num Cadena a validar.
+     * @return true si la cadena contiene solo números, false de lo contrario.
+     */
+    private boolean validateNumbers(String num) {
         Helpers help = new Helpers();
         return help.validateNumbers(num);
     }
@@ -90,11 +109,6 @@ public class CheckOut extends javax.swing.JFrame {
         });
         jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 90, 40));
 
-        search_name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                search_nameActionPerformed(evt);
-            }
-        });
         search_name.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 search_nameKeyReleased(evt);
@@ -123,11 +137,6 @@ public class CheckOut extends javax.swing.JFrame {
         });
         jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 90, 30));
 
-        search_lastname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                search_lastnameActionPerformed(evt);
-            }
-        });
         search_lastname.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 search_lastnameKeyReleased(evt);
@@ -156,6 +165,13 @@ public class CheckOut extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Método invocado al hacer clic en el botón "Volver". Oculta la ventana
+     * actual de salida y muestra la ventana de menú.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Volver".
+     */
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.setVisible(false);
         Welcome b = new Welcome();
@@ -163,6 +179,13 @@ public class CheckOut extends javax.swing.JFrame {
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
+    /**
+     * Método invocado al hacer clic en el botón "Buscar". Realiza el proceso de
+     * búsqueda y salida de un cliente del hotel.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Buscar".
+     */
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         String name = search_name.getText();
         String lastname = search_lastname.getText();
@@ -194,18 +217,24 @@ public class CheckOut extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_searchActionPerformed
 
-    private void search_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_nameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_search_nameActionPerformed
-
-    private void search_lastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_lastnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_search_lastnameActionPerformed
-
+    /**
+     * Método invocado al soltar una tecla en el campo de entrada del nombre.
+     * Realiza la validación del campo de entrada del nombre.
+     *
+     * @param evt El evento de teclado generado al soltar una tecla en el campo
+     * de entrada del nombre.
+     */
     private void search_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_nameKeyReleased
         Validation();
     }//GEN-LAST:event_search_nameKeyReleased
 
+    /**
+     * Método invocado al soltar una tecla en el campo de entrada del apellido.
+     * Realiza la validación del campo de entrada del apellido.
+     *
+     * @param evt El evento de teclado generado al soltar una tecla en el campo
+     * de entrada del apellido.
+     */
     private void search_lastnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_lastnameKeyReleased
         Validation();
     }//GEN-LAST:event_search_lastnameKeyReleased
@@ -225,27 +254,23 @@ public class CheckOut extends javax.swing.JFrame {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
 
-}
+                }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class  
+            java.util.logging.Logger.getLogger(CheckOut.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(CheckOut.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class  
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(CheckOut.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(CheckOut.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>

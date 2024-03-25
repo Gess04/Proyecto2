@@ -9,16 +9,26 @@ import static Interfaces.Welcome.rooms;
 import javax.swing.JOptionPane;
 
 /**
+ * La clase History representa la ventana de historial de ocupación de
+ * habitaciones del hotel. Permite buscar y mostrar el historial de ocupación de
+ * una habitación específica.
  *
  * @author Christian
  */
 public class History extends javax.swing.JFrame {
 
     /**
-     * Creates new form History
+     * Instancia de la clase Menu asociada a esta ventana de historial.
      */
     public static Menu v1;
 
+    /**
+     * Constructor de la clase History. Inicializa la interfaz de usuario y
+     * oculta la ventana de menú asociada.
+     *
+     * @param v1 Instancia de la clase Menu que se asocia a esta ventana de
+     * historial.
+     */
     public History(Menu v1) {
         initComponents();
         this.v1 = v1;
@@ -26,6 +36,10 @@ public class History extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    /**
+     * Método para realizar la validación del campo de entrada del número de
+     * habitación. Muestra un mensaje de error si el campo está vacío.
+     */
     public void Validation() {
 
         if (num_search.getText().isEmpty()) {
@@ -74,11 +88,6 @@ public class History extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 30));
 
         num_search.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        num_search.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                num_searchActionPerformed(evt);
-            }
-        });
         num_search.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 num_searchKeyReleased(evt);
@@ -113,6 +122,13 @@ public class History extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Método invocado al hacer clic en el botón "Volver". Oculta la ventana
+     * actual de historial y muestra la ventana de menú.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Volver".
+     */
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.setVisible(false);
         Welcome b = new Welcome();
@@ -120,6 +136,13 @@ public class History extends javax.swing.JFrame {
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
+    /**
+     * Método invocado al hacer clic en el botón "Buscar". Realiza la búsqueda y
+     * muestra el historial de ocupación de la habitación especificada.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Buscar".
+     */
     private void search_buttomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_buttomActionPerformed
         Helpers help = new Helpers();
         String num = num_search.getText();
@@ -149,10 +172,14 @@ public class History extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_search_buttomActionPerformed
 
-    private void num_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_searchActionPerformed
-
-    }//GEN-LAST:event_num_searchActionPerformed
-
+    /**
+     * Método invocado al soltar una tecla en el campo de entrada del número de
+     * habitación. Realiza la validación del campo de entrada del número de
+     * habitación.
+     *
+     * @param evt El evento de teclado generado al soltar una tecla en el campo
+     * de entrada del número de habitación.
+     */
     private void num_searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_num_searchKeyReleased
         Validation();
     }//GEN-LAST:event_num_searchKeyReleased

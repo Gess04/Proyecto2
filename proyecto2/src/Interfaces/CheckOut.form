@@ -70,7 +70,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="search_name">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="search_nameActionPerformed"/>
             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="search_nameKeyReleased"/>
           </Events>
           <Constraints>
@@ -135,7 +134,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="search_lastname">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="search_lastnameActionPerformed"/>
             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="search_lastnameKeyReleased"/>
           </Events>
           <Constraints>

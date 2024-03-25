@@ -11,16 +11,26 @@ import Functions.Helpers;
 import static Interfaces.Welcome.states;
 
 /**
+ * La clase SearchLodging representa la ventana de búsqueda de hospedajes de
+ * clientes. Permite buscar si un cliente está hospedado y en qué habitación.
  *
  * @author Christian
  */
 public class SearchLodging extends javax.swing.JFrame {
 
     /**
-     * Creates new form FindLodging
+     * Instancia de la clase Menu asociada a esta ventana de búsqueda de
+     * hospedajes.
      */
     public static Menu v1;
 
+    /**
+     * Constructor de la clase SearchLodging. Inicializa la interfaz de usuario
+     * y oculta la ventana de menú asociada.
+     *
+     * @param v1 Instancia de la clase Menu que se asocia a esta ventana de
+     * búsqueda de hospedajes.
+     */
     public SearchLodging(Menu v1) {
         initComponents();
         this.v1 = v1;
@@ -29,6 +39,10 @@ public class SearchLodging extends javax.swing.JFrame {
         this.setResizable(false);
     }
 
+    /**
+     * Método para realizar la validación de los campos de entrada del nombre y
+     * apellido. Muestra un mensaje de error si alguno de los campos está vacío.
+     */
     public void Validation() {
 
         if (search_lastName.getText().isEmpty()) {
@@ -45,6 +59,12 @@ public class SearchLodging extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Método para validar si una cadena contiene solo números.
+     *
+     * @param num Cadena a validar.
+     * @return true si la cadena contiene solo números, false de lo contrario.
+     */
     private boolean validateNumbers(String num) {
         Helpers help = new Helpers();
         return help.validateNumbers(num);
@@ -89,11 +109,6 @@ public class SearchLodging extends javax.swing.JFrame {
         jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 40));
 
         search_name.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        search_name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                search_nameActionPerformed(evt);
-            }
-        });
         search_name.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 search_nameKeyReleased(evt);
@@ -122,27 +137,12 @@ public class SearchLodging extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 250, -1));
 
         searchText1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        searchText1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchText1ActionPerformed(evt);
-            }
-        });
         jPanel1.add(searchText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
 
         searchText2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        searchText2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchText2ActionPerformed(evt);
-            }
-        });
         jPanel1.add(searchText2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
 
         search_lastName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        search_lastName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                search_lastNameActionPerformed(evt);
-            }
-        });
         search_lastName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 search_lastNameKeyReleased(evt);
@@ -171,6 +171,13 @@ public class SearchLodging extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Método invocado al hacer clic en el botón "Buscar". Realiza el proceso de
+     * búsqueda de hospedaje de un cliente.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Buscar".
+     */
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         String name = search_name.getText();
         String lastname = search_lastName.getText();
@@ -190,6 +197,13 @@ public class SearchLodging extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_searchActionPerformed
 
+    /**
+     * Método invocado al hacer clic en el botón "Volver". Oculta la ventana
+     * actual de búsqueda de hospedajes y muestra la ventana de menú.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Volver".
+     */
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.setVisible(false);
         Welcome b = new Welcome();
@@ -197,29 +211,27 @@ public class SearchLodging extends javax.swing.JFrame {
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
-    private void search_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_nameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_search_nameActionPerformed
-
-    private void search_lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_lastNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_search_lastNameActionPerformed
-
+    /**
+     * Método invocado al soltar una tecla en el campo de entrada del nombre.
+     * Realiza la validación del campo de entrada del nombre.
+     *
+     * @param evt El evento de teclado generado al soltar una tecla en el campo
+     * de entrada del nombre.
+     */
     private void search_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_nameKeyReleased
         Validation();
     }//GEN-LAST:event_search_nameKeyReleased
 
+    /**
+     * Método invocado al soltar una tecla en el campo de entrada del apellido.
+     * Realiza la validación del campo de entrada del apellido.
+     *
+     * @param evt El evento de teclado generado al soltar una tecla en el campo
+     * de entrada del apellido.
+     */
     private void search_lastNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_lastNameKeyReleased
         Validation();
     }//GEN-LAST:event_search_lastNameKeyReleased
-
-    private void searchText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchText1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchText1ActionPerformed
-
-    private void searchText2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchText2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchText2ActionPerformed
 
     /**
      * @param args the command line arguments

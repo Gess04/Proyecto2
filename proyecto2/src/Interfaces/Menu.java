@@ -5,16 +5,21 @@
 package Interfaces;
 
 /**
- *
+ * La clase Menu representa la ventana principal del menú de la aplicación.
+ * 
  * @author Christian
  */
 public class Menu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Menu
-     */
     public static Welcome v1;
-    
+
+    /**
+     * Constructor de la clase Menu. Inicializa la interfaz de usuario y oculta
+     * la ventana de bienvenida asociada.
+     *
+     * @param v1 Instancia de la clase Welcome que se asocia a esta ventana de
+     * menú.
+     */
     public Menu(Welcome v1) {
         initComponents();
         this.v1 = v1;
@@ -139,30 +144,63 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Método invocado al hacer clic en el botón "Check-In". Crea una instancia
+     * de la ventana CheckIn y la muestra. Oculta la ventana actual de menú.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Check-In".
+     */
     private void checkInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInActionPerformed
         CheckIn checkin = new CheckIn(this);
         this.setVisible(false);
         checkin.setVisible(true);
     }//GEN-LAST:event_checkInActionPerformed
-
+    /**
+     * Método invocado al hacer clic en el botón "Historial". Crea una instancia
+     * de la ventana History y la muestra. Oculta la ventana actual de menú.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Historial".
+     */
     private void historyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyActionPerformed
         History history = new History(this);
         this.setVisible(false);
         history.setVisible(true);
     }//GEN-LAST:event_historyActionPerformed
-
+    /**
+     * Método invocado al hacer clic en el botón "Buscar Reservas". Crea una
+     * instancia de la ventana SearchReservation y la muestra. Oculta la ventana
+     * actual de menú.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón "Buscar
+     * Reservas".
+     */
     private void searchResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchResActionPerformed
         SearchReservation searchRes = new SearchReservation(this);
         this.setVisible(false);
         searchRes.setVisible(true);
     }//GEN-LAST:event_searchResActionPerformed
-
+    /**
+     * Método invocado al hacer clic en el botón "Check-Out". Crea una instancia
+     * de la ventana CheckOut y la muestra. Oculta la ventana actual de menú.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón
+     * "Check-Out".
+     */
     private void checkOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutActionPerformed
         CheckOut checkout = new CheckOut(this);
         this.setVisible(false);
         checkout.setVisible(true);
     }//GEN-LAST:event_checkOutActionPerformed
-
+    /**
+     * Método invocado al hacer clic en el botón "Buscar Hospedajes". Crea una
+     * instancia de la ventana SearchLodging y la muestra. Oculta la ventana
+     * actual de menú.
+     *
+     * @param evt El evento de acción generado al hacer clic en el botón "Buscar
+     * Hospedajes".
+     */
     private void searchLodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchLodActionPerformed
         SearchLodging searchLod = new SearchLodging(this);
         this.setVisible(false);
