@@ -7,6 +7,7 @@ package Interfaces;
 import Classes.Client;
 import javax.swing.JOptionPane;
 import EDD.HashTable;
+import Functions.Helpers;
 import static Interfaces.Welcome.states;
 
 /**
@@ -42,6 +43,11 @@ public class SearchLodging extends javax.swing.JFrame {
             lblName.setText("");
         }
 
+    }
+
+    private boolean validateNumbers(String num) {
+        Helpers help = new Helpers();
+        return help.validateNumbers(num);
     }
 
     /**
@@ -169,13 +175,18 @@ public class SearchLodging extends javax.swing.JFrame {
         String name = search_name.getText();
         String lastname = search_lastName.getText();
         Client client = new Client(name, lastname);
-        if (search_lastName.getText().isEmpty() || search_name.getText().isEmpty()) {
+
+        if (name.isEmpty() || lastname.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debes rellenar las casillas!");
-        } else if (states.isInHashIndexN(client) != -1) {
-            int num_hab = states.isInHashIndexN(client) + 1;
-            JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " está hospedado en la habitación." + num_hab);
+        } else if (validateNumbers(name) || validateNumbers(lastname)) {
+            JOptionPane.showMessageDialog(null, "El nombre y el apellido no pueden ser números.");
         } else {
-            JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " no esta hospedado.");
+            if (states.isInHashIndexN(client) != -1) {
+                int num_hab = states.isInHashIndexN(client) + 1;
+                JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " está hospedado en la habitación." + num_hab);
+            } else {
+                JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " no esta hospedado.");
+            }
         }
     }//GEN-LAST:event_searchActionPerformed
 

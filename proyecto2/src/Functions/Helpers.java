@@ -13,7 +13,7 @@ public class Helpers {
         return letter.matches("[a-zA-Zñ]*");
     }
     
-    private boolean validateNumbers(String num){
+    public boolean validateNumbers(String num){
         return num.matches("[0-9]*");
     }
     

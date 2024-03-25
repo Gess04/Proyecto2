@@ -26,7 +26,7 @@ public class SearchReservation extends javax.swing.JFrame {
         v1.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        
+
     }
 
     public void Validation() {
@@ -37,7 +37,6 @@ public class SearchReservation extends javax.swing.JFrame {
             lblId.setText("");
         }
 
-        
     }
 
     /**
@@ -134,19 +133,23 @@ public class SearchReservation extends javax.swing.JFrame {
         String cedula = searchByID.getText();
         int ci = help.ValidateID(cedula);
 
-        if (searchByID.getText().isEmpty()) {
+        if (cedula.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
-        }
 
-        else if (ci != -1) {
-            if (reservations.searchNode2(reservations.getRoot(), ci) != null) {
-                JOptionPane.showMessageDialog(null, reservations.searchNode2(reservations.getRoot(), ci).getReservation().toString());
-            } else {
-                JOptionPane.showMessageDialog(null, "La cedula " + ci + " no se ha encontrado");
-            }
-
+        } else if (!help.validateNumbers(cedula)) {
+            JOptionPane.showMessageDialog(null, "Debes llenar la casilla con números!");
         } else {
-            JOptionPane.showMessageDialog(null, "La cedula no es valida");
+
+            if (ci != -1) {
+                if (reservations.searchNode2(reservations.getRoot(), ci) != null) {
+                    JOptionPane.showMessageDialog(null, reservations.searchNode2(reservations.getRoot(), ci).getReservation().toString());
+                } else {
+                    JOptionPane.showMessageDialog(null, "La cedula " + ci + " no se ha encontrado");
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "La cedula no es valida");
+            }
         }
     }//GEN-LAST:event_searchActionPerformed
 

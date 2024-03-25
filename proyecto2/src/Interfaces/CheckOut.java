@@ -4,6 +4,7 @@
  */
 package Interfaces;
 
+import Functions.Helpers;
 import Classes.Client;
 import static Interfaces.Welcome.room_availables;
 import static Interfaces.Welcome.rooms;
@@ -41,6 +42,11 @@ public class CheckOut extends javax.swing.JFrame {
         } else {
             lblName.setText("");
         }
+    }
+
+    private boolean validateNumbers(String num){
+        Helpers help = new Helpers();
+        return help.validateNumbers(num);
     }
 
     /**
@@ -160,25 +166,31 @@ public class CheckOut extends javax.swing.JFrame {
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         String name = search_name.getText();
         String lastname = search_lastname.getText();
-        Client client = new Client(name, lastname);
-        if (search_lastname.getText().isEmpty() || search_name.getText().isEmpty()) {
+
+        // Verifica si los campos están vacíos
+        if (name.isEmpty() || lastname.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debes rellenar las casillas!");
-        } else if (states.isInHashIndexN(client) != -1) {
-            int num_hab = states.isInHashIndexN(client) + 1;
-
-            rooms.searchByKey(num_hab).setAvailable(true);
-            rooms.searchByKey(num_hab).getHistory().addEnd(states.isInHashStatus(client));
-
-            states.deleteStatus(states.isInHashStatus(client));
-
-            room_availables.clear();
-
-            states.Availables(room_availables);
-
-            JOptionPane.showMessageDialog(null, "Haz salido del Hotel");
-
+        } else if (validateNumbers(name) || validateNumbers(lastname)) {
+            JOptionPane.showMessageDialog(null, "El nombre y el apellido no pueden ser números.");
         } else {
-            JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " no esta hospedado");
+            // Si los campos no están vacíos y no son números, procede con la lógica existente
+            Client client = new Client(name, lastname);
+            if (states.isInHashIndexN(client) != -1) {
+                int num_hab = states.isInHashIndexN(client) + 1;
+
+                rooms.searchByKey(num_hab).setAvailable(true);
+                rooms.searchByKey(num_hab).getHistory().addEnd(states.isInHashStatus(client));
+
+                states.deleteStatus(states.isInHashStatus(client));
+
+                room_availables.clear();
+
+                states.Availables(room_availables);
+
+                JOptionPane.showMessageDialog(null, "Haz salido del Hotel");
+            } else {
+                JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " no esta hospedado");
+            }
         }
     }//GEN-LAST:event_searchActionPerformed
 
@@ -212,16 +224,28 @@ public class CheckOut extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CheckOut.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(CheckOut.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(CheckOut.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(CheckOut.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>

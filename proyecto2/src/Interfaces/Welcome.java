@@ -55,21 +55,22 @@ public class Welcome extends javax.swing.JFrame {
                 nextActionPerformed(evt);
             }
         });
-        jPanel1.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 110, 50));
+        jPanel1.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 110, 50));
 
         jLabel4.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("MetroResort");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 180, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 170, 30));
 
+        jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("The best place to stay!");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 420, 330));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 420, 170));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 430, 340));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 430, 170));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

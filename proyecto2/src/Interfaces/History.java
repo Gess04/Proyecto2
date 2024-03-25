@@ -94,7 +94,7 @@ public class History extends javax.swing.JFrame {
                 search_buttomActionPerformed(evt);
             }
         });
-        jPanel1.add(search_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 100, 40));
+        jPanel1.add(search_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 100, 40));
 
         jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,7 +123,6 @@ public class History extends javax.swing.JFrame {
     private void search_buttomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_buttomActionPerformed
         Helpers help = new Helpers();
         String num = num_search.getText();
-
 
         if (!num.isEmpty()) {
             try {

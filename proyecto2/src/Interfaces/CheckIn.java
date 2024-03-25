@@ -136,48 +136,50 @@ public class CheckIn extends javax.swing.JFrame {
         int ci = help.ValidateID(id);
         List habs_disp = new List();
 
-        if (input_ci.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
-        }
+        if (!help.validateNumbers(id)) {
+            JOptionPane.showMessageDialog(null, "Debes llenar la casilla con números!");
+        } else {
+            if (id.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Debes rellenar la casilla!");
+            } else if (ci != -1) {
+                if (reservations.searchNode2(reservations.getRoot(), ci) != null) {
+                    Reservation reservation = reservations.searchNode2(reservations.getRoot(), ci).getReservation();
 
-        else if (ci != -1) {
-            if (reservations.searchNode2(reservations.getRoot(), ci) != null) {
-                Reservation reservation = reservations.searchNode2(reservations.getRoot(), ci).getReservation();
+                    for (int i = 0; i < room_availables.getSize(); i++) {
+                        int num_hab = (int) room_availables.getValor(i) + 1;
 
-                for (int i = 0; i < room_availables.getSize(); i++) {
-                    int num_hab = (int) room_availables.getValor(i) + 1;
-
-                    if (rooms.searchByKey(num_hab).getRoomType().equalsIgnoreCase(reservation.getRoomType())) {
-                        habs_disp.addEnd(num_hab);
-                    }
-                }
-
-                if (habs_disp.getSize() == 0) {
-                    JOptionPane.showMessageDialog(null, "No hay habitación del tipo deseado disponible");
-                } else {
-                    Status status = new Status(-1, reservations.searchNode2(reservations.getRoot(), ci).getReservation().getClient(), reservations.searchNode2(reservations.getRoot(), ci).getReservation().getCheckIn());
-                    int count = 0;
-                    for (int i = 0; i < habs_disp.getSize(); i++) {
-                        int num_hab = (int) habs_disp.getValor(i);
-                        status.setNum_hab(num_hab);
-                        if (states.insertStatus(status) != 0 || states.insertStatus(status) != -1) {
-                            room_availables.clear();
-                            states.Availables(room_availables);
-                            reservations.deleteByClientId(ci);
-                            JOptionPane.showMessageDialog(null, "El cliente se ha hospedado en la habitacion " + num_hab);
-                            count++;
-                            break;
+                        if (rooms.searchByKey(num_hab).getRoomType().equalsIgnoreCase(reservation.getRoomType())) {
+                            habs_disp.addEnd(num_hab);
                         }
                     }
-                    if (count == 0) {
+
+                    if (habs_disp.getSize() == 0) {
                         JOptionPane.showMessageDialog(null, "No hay habitación del tipo deseado disponible");
+                    } else {
+                        Status status = new Status(-1, reservations.searchNode2(reservations.getRoot(), ci).getReservation().getClient(), reservations.searchNode2(reservations.getRoot(), ci).getReservation().getCheckIn());
+                        int count = 0;
+                        for (int i = 0; i < habs_disp.getSize(); i++) {
+                            int num_hab = (int) habs_disp.getValor(i);
+                            status.setNum_hab(num_hab);
+                            if (states.insertStatus(status) != 0 || states.insertStatus(status) != -1) {
+                                room_availables.clear();
+                                states.Availables(room_availables);
+                                reservations.deleteByClientId(ci);
+                                JOptionPane.showMessageDialog(null, "El cliente se ha hospedado en la habitacion " + num_hab);
+                                count++;
+                                break;
+                            }
+                        }
+                        if (count == 0) {
+                            JOptionPane.showMessageDialog(null, "No hay habitación del tipo deseado disponible");
+                        }
                     }
+                } else {
+                    JOptionPane.showMessageDialog(null, "La cédula " + ci + " no se ha encontrado");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "La cédula " + ci + " no se ha encontrado");
+                JOptionPane.showMessageDialog(null, "La cédula no es válida!");
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "La cédula no es valida");
         }
     }//GEN-LAST:event_lodgeActionPerformed
 
