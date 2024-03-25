@@ -70,6 +70,7 @@ public class SearchReservation extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         searchByID = new javax.swing.JTextField();
         lblId = new javax.swing.JLabel();
+        searchReservation_icon = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,7 +91,7 @@ public class SearchReservation extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Buscar reservación");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 270, 30));
 
         search.setBackground(new java.awt.Color(0, 0, 0));
         search.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,12 +101,12 @@ public class SearchReservation extends javax.swing.JFrame {
                 searchActionPerformed(evt);
             }
         });
-        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 90, 30));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 90, 30));
 
         jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese la cédula del huesped:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         searchByID.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         searchByID.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -113,11 +114,14 @@ public class SearchReservation extends javax.swing.JFrame {
                 searchByIDKeyReleased(evt);
             }
         });
-        jPanel1.add(searchByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 310, 30));
+        jPanel1.add(searchByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 310, 30));
 
         lblId.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 260, 20));
+        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 260, 20));
+
+        searchReservation_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/searchreservation.png"))); // NOI18N
+        jPanel1.add(searchReservation_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 380));
@@ -232,5 +236,6 @@ public class SearchReservation extends javax.swing.JFrame {
     private javax.swing.JLabel lblId;
     private javax.swing.JButton search;
     private javax.swing.JTextField searchByID;
+    private javax.swing.JLabel searchReservation_icon;
     // End of variables declaration//GEN-END:variables
 }

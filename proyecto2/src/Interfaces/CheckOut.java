@@ -88,6 +88,7 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
         lblLastName = new javax.swing.JLabel();
+        checkout_icon = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
@@ -120,7 +121,7 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Check Out");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, 30));
 
         jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -156,6 +157,9 @@ public class CheckOut extends javax.swing.JFrame {
         lblLastName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblLastName.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 260, 20));
+
+        checkout_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checkout.png"))); // NOI18N
+        jPanel1.add(checkout_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, -1, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -286,6 +290,7 @@ public class CheckOut extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
+    private javax.swing.JLabel checkout_icon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

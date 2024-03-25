@@ -91,6 +91,7 @@ public class SearchLodging extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
         lblLastName = new javax.swing.JLabel();
+        searchLodging_icon = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -129,12 +130,12 @@ public class SearchLodging extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Buscar hospedaje");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 300, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 250, 30));
 
-        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Indique el apellido del huesped:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 250, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 270, -1));
 
         searchText1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jPanel1.add(searchText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
@@ -148,12 +149,12 @@ public class SearchLodging extends javax.swing.JFrame {
                 search_lastNameKeyReleased(evt);
             }
         });
-        jPanel1.add(search_lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 290, 30));
+        jPanel1.add(search_lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 290, 30));
 
-        jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Indique el nombre del huesped:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 250, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 270, -1));
 
         lblName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
@@ -161,7 +162,10 @@ public class SearchLodging extends javax.swing.JFrame {
 
         lblLastName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblLastName.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 260, 20));
+        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 260, 20));
+
+        searchLodging_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/searchlodging.png"))); // NOI18N
+        jPanel1.add(searchLodging_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, -1, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 370));
@@ -281,6 +285,7 @@ public class SearchLodging extends javax.swing.JFrame {
     private javax.swing.JLabel lblLastName;
     private javax.swing.JLabel lblName;
     private javax.swing.JButton search;
+    private javax.swing.JLabel searchLodging_icon;
     private javax.swing.JTextField searchText1;
     private javax.swing.JTextField searchText2;
     private javax.swing.JTextField search_lastName;

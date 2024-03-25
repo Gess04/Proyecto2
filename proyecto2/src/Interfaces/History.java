@@ -65,6 +65,7 @@ public class History extends javax.swing.JFrame {
         search_buttom = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         lblNumber = new javax.swing.JLabel();
+        history_icon = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,7 +86,7 @@ public class History extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Historial");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, 30));
 
         num_search.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         num_search.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -103,7 +104,7 @@ public class History extends javax.swing.JFrame {
                 search_buttomActionPerformed(evt);
             }
         });
-        jPanel1.add(search_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 100, 40));
+        jPanel1.add(search_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 100, 40));
 
         jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,6 +114,9 @@ public class History extends javax.swing.JFrame {
         lblNumber.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblNumber.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(lblNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 280, 20));
+
+        history_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/history.png"))); // NOI18N
+        jPanel1.add(history_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -223,6 +227,7 @@ public class History extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
+    private javax.swing.JLabel history_icon;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

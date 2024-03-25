@@ -66,6 +66,7 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
         lodge = new javax.swing.JButton();
+        checkin_icon = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,7 +87,7 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Check In");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 130, 30));
 
         input_ci.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         input_ci.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -94,16 +95,16 @@ public class CheckIn extends javax.swing.JFrame {
                 input_ciKeyReleased(evt);
             }
         });
-        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 370, 30));
+        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 370, 30));
 
         jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Introduzca la cédula del huésped:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 300, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 300, -1));
 
         lblId.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 300, 20));
+        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 300, 20));
 
         lodge.setBackground(new java.awt.Color(0, 0, 0));
         lodge.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,7 +114,10 @@ public class CheckIn extends javax.swing.JFrame {
                 lodgeActionPerformed(evt);
             }
         });
-        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, 40));
+        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, 40));
+
+        checkin_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checkin.png"))); // NOI18N
+        jPanel1.add(checkin_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 600, 410));
@@ -247,6 +251,7 @@ public class CheckIn extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
+    private javax.swing.JLabel checkin_icon;
     private javax.swing.JTextField input_ci;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

@@ -49,6 +49,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        checkin_icon = new javax.swing.JLabel();
+        searchLodging_icon = new javax.swing.JLabel();
+        history_icon = new javax.swing.JLabel();
+        checkout_icon = new javax.swing.JLabel();
+        searchReservation_icon = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,10 +61,10 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Buscar Reservación:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, 20));
 
         jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -74,7 +79,7 @@ public class Menu extends javax.swing.JFrame {
                 checkInActionPerformed(evt);
             }
         });
-        jPanel1.add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 90, 40));
+        jPanel1.add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 90, 40));
 
         checkOut.setBackground(new java.awt.Color(0, 0, 0));
         checkOut.setForeground(new java.awt.Color(255, 255, 255));
@@ -84,7 +89,7 @@ public class Menu extends javax.swing.JFrame {
                 checkOutActionPerformed(evt);
             }
         });
-        jPanel1.add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 90, 40));
+        jPanel1.add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 90, 40));
 
         searchRes.setBackground(new java.awt.Color(0, 0, 0));
         searchRes.setForeground(new java.awt.Color(255, 255, 255));
@@ -94,7 +99,7 @@ public class Menu extends javax.swing.JFrame {
                 searchResActionPerformed(evt);
             }
         });
-        jPanel1.add(searchRes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 90, 40));
+        jPanel1.add(searchRes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 90, 40));
 
         history.setBackground(new java.awt.Color(0, 0, 0));
         history.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,7 +109,7 @@ public class Menu extends javax.swing.JFrame {
                 historyActionPerformed(evt);
             }
         });
-        jPanel1.add(history, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 90, 40));
+        jPanel1.add(history, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 90, 40));
 
         searchLod.setBackground(new java.awt.Color(0, 0, 0));
         searchLod.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,27 +119,42 @@ public class Menu extends javax.swing.JFrame {
                 searchLodActionPerformed(evt);
             }
         });
-        jPanel1.add(searchLod, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 90, 40));
+        jPanel1.add(searchLod, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 90, 40));
 
-        jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Check In:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Check Out:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Historial de habitación:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Buscar hospedaje:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
+
+        checkin_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checkin.png"))); // NOI18N
+        jPanel1.add(checkin_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, 70));
+
+        searchLodging_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/searchlodging.png"))); // NOI18N
+        jPanel1.add(searchLodging_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, 70));
+
+        history_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/history.png"))); // NOI18N
+        jPanel1.add(history_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, -1, 70));
+
+        checkout_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checkout.png"))); // NOI18N
+        jPanel1.add(checkout_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, -1, 70));
+
+        searchReservation_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/searchreservation.png"))); // NOI18N
+        jPanel1.add(searchReservation_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 370));
@@ -253,7 +273,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JButton checkIn;
     private javax.swing.JButton checkOut;
+    private javax.swing.JLabel checkin_icon;
+    private javax.swing.JLabel checkout_icon;
     private javax.swing.JButton history;
+    private javax.swing.JLabel history_icon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -262,6 +285,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton searchLod;
+    private javax.swing.JLabel searchLodging_icon;
     private javax.swing.JButton searchRes;
+    private javax.swing.JLabel searchReservation_icon;
     // End of variables declaration//GEN-END:variables
 }
