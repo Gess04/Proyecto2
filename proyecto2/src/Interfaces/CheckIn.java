@@ -82,12 +82,12 @@ public class CheckIn extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 90, 40));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 90, 40));
 
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Check In");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 130, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 130, 30));
 
         input_ci.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         input_ci.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -95,16 +95,16 @@ public class CheckIn extends javax.swing.JFrame {
                 input_ciKeyReleased(evt);
             }
         });
-        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 370, 30));
+        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 370, 30));
 
         jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Introduzca la cédula del huésped:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 300, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 300, -1));
 
         lblId.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 300, 20));
+        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 300, 20));
 
         lodge.setBackground(new java.awt.Color(0, 0, 0));
         lodge.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,15 +114,15 @@ public class CheckIn extends javax.swing.JFrame {
                 lodgeActionPerformed(evt);
             }
         });
-        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, 40));
+        jPanel1.add(lodge, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, 40));
 
         checkin_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checkin.png"))); // NOI18N
-        jPanel1.add(checkin_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, 70));
+        jPanel1.add(checkin_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 600, 410));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 680, 470));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

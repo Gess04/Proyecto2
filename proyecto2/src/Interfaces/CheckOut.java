@@ -108,25 +108,25 @@ public class CheckOut extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 90, 40));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 90, 40));
 
         search_name.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 search_nameKeyReleased(evt);
             }
         });
-        jPanel1.add(search_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 310, 30));
+        jPanel1.add(search_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 310, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Check Out");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 150, 30));
 
         jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ingrese el apellido del huesped:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         search.setBackground(new java.awt.Color(0, 0, 0));
         search.setForeground(new java.awt.Color(255, 255, 255));
@@ -136,35 +136,35 @@ public class CheckOut extends javax.swing.JFrame {
                 searchActionPerformed(evt);
             }
         });
-        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 90, 30));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 90, 30));
 
         search_lastname.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 search_lastnameKeyReleased(evt);
             }
         });
-        jPanel1.add(search_lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 310, 30));
+        jPanel1.add(search_lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 310, 30));
 
         jLabel4.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ingrese el nombre del huesped:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         lblName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 260, 20));
+        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 260, 20));
 
         lblLastName.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblLastName.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 260, 20));
+        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 260, 20));
 
         checkout_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checkout.png"))); // NOI18N
-        jPanel1.add(checkout_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, -1, 70));
+        jPanel1.add(checkout_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 360));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -81,7 +81,7 @@ public class History extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 314, 100, 40));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 100, 40));
 
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,9 +119,9 @@ public class History extends javax.swing.JFrame {
         jPanel1.add(history_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 2720, 1770));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 380));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

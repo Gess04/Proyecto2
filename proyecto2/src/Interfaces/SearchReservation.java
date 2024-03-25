@@ -86,7 +86,7 @@ public class SearchReservation extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 90, 40));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 90, 40));
 
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,12 +101,12 @@ public class SearchReservation extends javax.swing.JFrame {
                 searchActionPerformed(evt);
             }
         });
-        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 90, 30));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 90, 30));
 
         jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese la cédula del huesped:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         searchByID.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         searchByID.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -114,7 +114,7 @@ public class SearchReservation extends javax.swing.JFrame {
                 searchByIDKeyReleased(evt);
             }
         });
-        jPanel1.add(searchByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 310, 30));
+        jPanel1.add(searchByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 310, 30));
 
         lblId.setFont(new java.awt.Font("Britannic Bold", 2, 14)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,9 +124,9 @@ public class SearchReservation extends javax.swing.JFrame {
         jPanel1.add(searchReservation_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 380));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 450));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 380));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
