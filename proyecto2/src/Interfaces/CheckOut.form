@@ -69,6 +69,11 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="search_name">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="18" style="0"/>
+            </Property>
+          </Properties>
           <Events>
             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="search_nameKeyReleased"/>
           </Events>
@@ -133,6 +138,11 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="search_lastname">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="18" style="0"/>
+            </Property>
+          </Properties>
           <Events>
             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="search_lastnameKeyReleased"/>
           </Events>

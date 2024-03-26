@@ -8,7 +8,7 @@ import EDD.*;
 import javax.swing.JOptionPane;
 /**
  *
- * @author 58414
+ * @author Gabriel Flores
  */
 public class Functions {
     public void loadHashTable(List list, Reservation reservation, HashTable table) {

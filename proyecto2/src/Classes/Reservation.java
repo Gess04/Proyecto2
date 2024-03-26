@@ -79,7 +79,7 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Nombre cliente: " + client.getName() + client.getLastname() + "\nCedula cliente: " + client.getId() + "\nLLegada: " + checkIn + "\nSalida: " + checkOut;
+        return "Nombre cliente: " + client.getName() + client.getLastname() + "\nCedula cliente: " + client.getId() + "\nLlegada: " + checkIn + "\nSalida: " + checkOut;
     }
 }
 

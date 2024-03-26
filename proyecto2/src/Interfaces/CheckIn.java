@@ -25,7 +25,7 @@ public class CheckIn extends javax.swing.JFrame {
      * Instancia de la clase Menu asociada a esta ventana de registro de
      * ingreso.
      */
-    public static Menu v1;
+    public static Main v1;
 
     /**
      * Constructor de la clase CheckIn. Inicializa la interfaz de usuario y
@@ -34,7 +34,7 @@ public class CheckIn extends javax.swing.JFrame {
      * @param v1 Instancia de la clase Menu que se asocia a esta ventana de
      * registro de ingreso.
      */
-    public CheckIn(Menu v1) {
+    public CheckIn(Main v1) {
         initComponents();
         this.v1 = v1;
         v1.setVisible(false);
@@ -137,7 +137,7 @@ public class CheckIn extends javax.swing.JFrame {
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.setVisible(false);
         Welcome b = new Welcome();
-        Menu window1 = new Menu(b);
+        Main window1 = new Main(b);
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
@@ -194,7 +194,7 @@ public class CheckIn extends javax.swing.JFrame {
                                 room_availables.clear();
                                 states.Availables(room_availables);
                                 reservations.deleteByClientId(ci);
-                                JOptionPane.showMessageDialog(null, "El cliente se ha hospedado en la habitacion " + num_hab);
+                                JOptionPane.showMessageDialog(null, "El cliente se ha hospedado en la habitacion " + status.getNum_hab());
                                 count++;
                                 break;
                             }
