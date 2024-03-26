@@ -185,13 +185,9 @@ public class SearchLodging extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "El nombre y el apellido no pueden ser números.");
         } else {
             if (states.isInHashIndexN(client) != -1) {
-<<<<<<< Updated upstream
                 int num_room = states.isInHashIndexN(client) + 1;
                 JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " está hospedado en la habitación: " + num_room);
-=======
-                int num_hab = states.isInHashIndexN(client) + 1;
-                JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " está hospedado en la habitación:" + num_hab);
->>>>>>> Stashed changes
+
             } else {
                 JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " no esta hospedado.");
             }

@@ -12,16 +12,25 @@ import Classes.*;
 public class AVL {
     
     private NodeAVL root;
-
+    /**
+     * Constructor de la clase AVL. Inicializa la raíz como nula.
+     */
     public AVL() {
         root = null;
     }
-
-    public NodeAVL getRaiz() {
+    /**
+     * Obtiene la raíz del árbol AVL.
+     * @return La raíz del árbol AVL.
+     */
+    public NodeAVL getRoot() {
         return root;
     }
 
- 
+    /**
+     * Inserta un nuevo nodo con una clave y una sala en el árbol AVL.
+     * @param key La clave del nodo a insertar.
+     * @param room La habitacion asociada al nodo a insertar.
+     */
     public void insert(int key, Room room) {
         root = insert(root, key, room);
     }
@@ -95,7 +104,10 @@ public class AVL {
         y.setHeight(Math.max(height(y.getLeft()), height(y.getRight())) + 1);
         return y;
     }
-    
+    /**
+     * Realiza un recorrido inorden del árbol AVL e imprime las claves
+     * y las salas asociadas en orden ascendente de clave.
+     */
     public void inOrden() {
         inOrder(root);
     }
@@ -107,7 +119,11 @@ public class AVL {
             inOrder(node.getRight());
         }
     }
-    
+    /**
+     * Busca una sala en el árbol AVL según una clave dada.
+     * @param key La clave de la sala a buscar.
+     * @return La sala asociada a la clave especificada, o null si no se encuentra.
+     */
     public Room searchByKey(int key) {
         NodeAVL actual = root;
 

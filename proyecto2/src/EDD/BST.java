@@ -13,31 +13,51 @@ import Classes.*;
 public class BST {
 
     private NodeBST root;
-
+    /**
+     * Constructor de la clase BST. Inicializa la raíz como nula.
+     */
     public BST() {
         this.root = null;
     }
-
+    /**
+     * Constructor de la clase BST que inicializa el árbol con un nodo raíz dado.
+     * @param root El nodo raíz del árbol binario de búsqueda.
+     */
     public BST(NodeBST root) {
         this.root = root;
     }
-
+    /**
+     * Obtiene la raíz del árbol binario de búsqueda.
+     * @return El nodo raíz del árbol binario de búsqueda.
+     */
     public NodeBST getRoot() {
         return root;
     }
-
+    /**
+     * Establece el nodo raíz del árbol binario de búsqueda.
+     * @param root El nodo que se establecerá como raíz del árbol.
+     */
     public void setRoot(NodeBST root) {
         this.root = root;
     }
-
+    /**
+     * Verifica si el árbol binario de búsqueda está vacío.
+     * @return true si el árbol está vacío, false de lo contrario.
+     */
     public boolean isEmpty() {
         return this.getRoot() == null;
     }
-
+    /**
+     * Vacía el árbol binario de búsqueda, estableciendo la raíz como nula.
+     */
     public void empty() {
         this.setRoot(null);
     }
-
+    /**
+     * Inserta un nuevo nodo con una reserva en el árbol binario de búsqueda.
+     * @param root El nodo raíz desde el cual se inicia la inserción.
+     * @param reservation La reserva a insertar en el árbol.
+     */
     public void insertNodo(NodeBST root, Reservation reservation) {
         NodeBST node = new NodeBST();
         node.setReservation(reservation);
@@ -61,7 +81,12 @@ public class BST {
             }
         }
     }
-
+    /**
+     * Busca un nodo en el árbol binario de búsqueda según el ID del cliente.
+     * @param id El ID del cliente a buscar.
+     * @param root El nodo raíz desde el cual se inicia la búsqueda.
+     * @return El nodo encontrado, o null si no se encuentra.
+     */
     public NodeBST searchNode(int id, NodeBST root) {
         if (isEmpty()) {
             return null;
@@ -88,7 +113,10 @@ public class BST {
             return searchNode2(nodoActual.getRight(), num);
         }
     }
-
+    /**
+     * Realiza un recorrido en preorden del árbol binario de búsqueda e imprime las reservas.
+     * @param root El nodo raíz desde el cual se inicia el recorrido.
+     */
     public void preOrder(NodeBST root) {
         if (root != null) {
             System.out.println("{ " + root.getReservation().toString() + " }");
@@ -96,7 +124,12 @@ public class BST {
             preOrder(root.getRight());
         }
     }
-
+    /**
+     * Realiza un recorrido en preorden del árbol binario de búsqueda y devuelve una cadena con las reservas.
+     * @param root El nodo raíz desde el cual se inicia el recorrido.
+     * @param chain La cadena acumulada durante el recorrido en preorden.
+     * @return La cadena que contiene las reservas en preorden.
+     */
     public String preOrder2(NodeBST root, String chain) {
         if (root != null) {
             chain = chain + root.getReservation().toString() + ",";
@@ -106,7 +139,11 @@ public class BST {
 
         return chain;
     }
-
+    /**
+     * Llena una lista con las reservas del árbol binario de búsqueda.
+     * @param root El nodo raíz desde el cual se inicia el recorrido.
+     * @param list La lista en la que se agregan las reservas.
+     */
     public void List(NodeBST root, List list) {
         list.addEnd(root.getReservation());
 
@@ -117,7 +154,10 @@ public class BST {
             List(root.getRight(), list);
         }
     }
-
+    /**
+     * Realiza un recorrido en orden del árbol binario de búsqueda e imprime las reservas.
+     * @param root El nodo raíz desde el cual se inicia el recorrido.
+     */
     public void inOrder(NodeBST root) {
         if (root != null) {
             preOrder(root.getLeft());
@@ -125,7 +165,10 @@ public class BST {
             preOrder(root.getRight());
         }
     }
-
+    /**
+     * Realiza un recorrido en postorden del árbol binario de búsqueda e imprime las reservas.
+     * @param root El nodo raíz desde el cual se inicia el recorrido.
+     */
     public void postOrder(NodeBST root) {
         if (root != null) {
             preOrder(root.getLeft());
@@ -133,7 +176,10 @@ public class BST {
             System.out.println("{ " + root.getReservation().toString() + " }");
         }
     }
-    
+    /**
+     * Elimina un nodo del árbol binario de búsqueda según el ID del cliente.
+     * @param clientId El ID del cliente cuya reserva se eliminará.
+     */
     public void deleteByClientId(int clientId) {
         this.root = deleteRecursively(root, clientId);
     }

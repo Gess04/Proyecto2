@@ -16,11 +16,16 @@ import javax.swing.JOptionPane;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-
+/**
+ * Clase que proporciona métodos para leer datos desde archivos CSV y almacenarlos en estructuras de datos.
+ */
 public class FileCSV {
     private Helpers help = new Helpers();
     
-    //funcion para leer archivo TXT
+     /**
+     * Lee los datos de reservas desde un archivo CSV y los inserta en un árbol binario de búsqueda.
+     * @param tree_reservation El árbol binario de búsqueda donde se insertarán las reservas.
+     */
     public void Read_bookings(BST tree_reservation){ 
         String line;
         String expresion_txt = "";
@@ -73,6 +78,10 @@ public class FileCSV {
         }
 
     }
+    /**
+     * Lee los datos de habitaciones desde un archivo CSV y los inserta en un árbol AVL.
+     * @param rooms El árbol AVL donde se insertarán las habitaciones.
+     */
     public void Read_rooms(AVL rooms){
         String line;
         String expresion_txt = "";
@@ -114,7 +123,10 @@ public class FileCSV {
             JOptionPane.showMessageDialog(null, "Error al leer la expresion");
         }
     }
-    
+    /**
+     * Lee los datos de estado de las habitaciones desde un archivo CSV y los inserta en una tabla hash.
+     * @param table La tabla hash donde se insertará el estado de las habitaciones.
+     */
     public void Read_state(HashTable table){
         String line;
         String expresion_txt = "";
@@ -166,7 +178,10 @@ public class FileCSV {
             JOptionPane.showMessageDialog(null, "Error al leer la expresion");
         }
     }
-    
+    /**
+     * Lee el historial de clientes desde un archivo CSV y lo inserta en la lista de historiales de las habitaciones.
+     * @param rooms El árbol AVL que contiene las habitaciones donde se insertará el historial.
+     */
     public void Read_history(AVL rooms){ 
         String line;
         String expresion_txt = "";
