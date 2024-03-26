@@ -22,7 +22,7 @@ public class CheckOut extends javax.swing.JFrame {
     /**
      * Instancia de la clase Menu asociada a esta ventana de salida.
      */
-    public static Menu v1;
+    public static Main v1;
 
     /**
      * Constructor de la clase CheckOut. Inicializa la interfaz de usuario y
@@ -31,7 +31,7 @@ public class CheckOut extends javax.swing.JFrame {
      * @param v1 Instancia de la clase Menu que se asocia a esta ventana de
      * salida.
      */
-    public CheckOut(Menu v1) {
+    public CheckOut(Main v1) {
         initComponents();
         this.v1 = v1;
         v1.setVisible(false);
@@ -110,6 +110,7 @@ public class CheckOut extends javax.swing.JFrame {
         });
         jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 90, 40));
 
+        search_name.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search_name.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 search_nameKeyReleased(evt);
@@ -138,6 +139,7 @@ public class CheckOut extends javax.swing.JFrame {
         });
         jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 90, 30));
 
+        search_lastname.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search_lastname.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 search_lastnameKeyReleased(evt);
@@ -179,7 +181,7 @@ public class CheckOut extends javax.swing.JFrame {
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.setVisible(false);
         Welcome b = new Welcome();
-        Menu window1 = new Menu(b);
+        Main window1 = new Main(b);
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
@@ -198,7 +200,7 @@ public class CheckOut extends javax.swing.JFrame {
         if (name.isEmpty() || lastname.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debes rellenar las casillas!");
         } else if (validateNumbers(name) || validateNumbers(lastname)) {
-            JOptionPane.showMessageDialog(null, "El nombre y el apellido no pueden ser números.");
+            JOptionPane.showMessageDialog(null, "El nombre y el apellido no pueden ser números!");
         } else {
             // Si los campos no están vacíos y no son números, procede con la lógica existente
             Client client = new Client(name, lastname);
@@ -214,7 +216,7 @@ public class CheckOut extends javax.swing.JFrame {
 
                 states.Availables(room_availables);
 
-                JOptionPane.showMessageDialog(null, "Haz salido del Hotel");
+                JOptionPane.showMessageDialog(null, "El huesped ha abandonado el hotel.");
             } else {
                 JOptionPane.showMessageDialog(null, "El cliente " + name + " " + lastname + " no esta hospedado");
             }

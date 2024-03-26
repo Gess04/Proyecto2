@@ -21,7 +21,7 @@ public class SearchReservation extends javax.swing.JFrame {
      * Instancia de la clase Menu asociada a esta ventana de búsqueda de
      * reservas.
      */
-    public static Menu v1;
+    public static Main v1;
 
     /**
      * Constructor de la clase SearchReservation. Inicializa la interfaz de
@@ -30,7 +30,7 @@ public class SearchReservation extends javax.swing.JFrame {
      * @param v1 Instancia de la clase Menu que se asocia a esta ventana de
      * búsqueda de reservas.
      */
-    public SearchReservation(Menu v1) {
+    public SearchReservation(Main v1) {
         initComponents();
         this.v1 = v1;
         v1.setVisible(false);
@@ -141,7 +141,7 @@ public class SearchReservation extends javax.swing.JFrame {
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.setVisible(false);
         Welcome b = new Welcome();
-        Menu window1 = new Menu(b);
+        Main window1 = new Main(b);
         window1.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 

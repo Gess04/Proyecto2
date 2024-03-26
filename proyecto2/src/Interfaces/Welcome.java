@@ -145,7 +145,7 @@ public class Welcome extends javax.swing.JFrame {
         Welcome b = new Welcome();
 
         // Crea una instancia de la clase Menu con la ventana de bienvenida 'b' y la muestra
-        Menu window1 = new Menu(b);
+        Main window1 = new Main(b);
         window1.setVisible(true);
     }//GEN-LAST:event_nextActionPerformed
 

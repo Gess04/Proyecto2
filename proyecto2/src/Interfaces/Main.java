@@ -9,7 +9,7 @@ package Interfaces;
  * 
  * @author Christian
  */
-public class Menu extends javax.swing.JFrame {
+public class Main extends javax.swing.JFrame {
 
     public static Welcome v1;
 
@@ -20,7 +20,7 @@ public class Menu extends javax.swing.JFrame {
      * @param v1 Instancia de la clase Welcome que se asocia a esta ventana de
      * menú.
      */
-    public Menu(Welcome v1) {
+    public Main(Welcome v1) {
         initComponents();
         this.v1 = v1;
         v1.setVisible(false);
@@ -38,9 +38,9 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        checkIn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        checkIn = new javax.swing.JButton();
         checkOut = new javax.swing.JButton();
         searchRes = new javax.swing.JButton();
         history = new javax.swing.JButton();
@@ -61,6 +61,16 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        checkIn.setBackground(new java.awt.Color(0, 0, 0));
+        checkIn.setForeground(new java.awt.Color(255, 255, 255));
+        checkIn.setText("Check In");
+        checkIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkInActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 100, 40));
+
         jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Buscar Reservación:");
@@ -71,16 +81,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel2.setText("Escoge una opción:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        checkIn.setBackground(new java.awt.Color(0, 0, 0));
-        checkIn.setForeground(new java.awt.Color(255, 255, 255));
-        checkIn.setText("Check In");
-        checkIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkInActionPerformed(evt);
-            }
-        });
-        jPanel1.add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 90, 40));
-
         checkOut.setBackground(new java.awt.Color(0, 0, 0));
         checkOut.setForeground(new java.awt.Color(255, 255, 255));
         checkOut.setText("Check Out");
@@ -89,7 +89,7 @@ public class Menu extends javax.swing.JFrame {
                 checkOutActionPerformed(evt);
             }
         });
-        jPanel1.add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 90, 40));
+        jPanel1.add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 110, 40));
 
         searchRes.setBackground(new java.awt.Color(0, 0, 0));
         searchRes.setForeground(new java.awt.Color(255, 255, 255));
@@ -244,14 +244,22 @@ public class Menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -264,7 +272,7 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu(v1).setVisible(true);
+                new Main(v1).setVisible(true);
             }
         });
     }
